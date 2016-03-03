@@ -5,14 +5,12 @@ $font-size: 16px;                                              // 16 pixels
 $leading: 1.5 * $font-size;                                    // 24 pixels
 
 
-
-
 // =================================================================================
 // Body sizing.
 // =================================================================================
 $column-width: 90px;
 $split-gutter-width: 22px;
-$body-width: (12 * ($column-width + $split-gutter-width)); // 1344 pixels
+$width-body: (12 * ($column-width + $split-gutter-width)); // 1344 pixels
 
 // =================================================================================
 // Measurement Grid-specific variables.
@@ -34,7 +32,7 @@ $color-red:				rgb(255,0,0);
 $color-green:			rgb(0,255,0);
 $color-blue:			rgb(0,0,255);
 $color-turquoise-green: rgb(10,237,143);
-#color-brownish-grey: 	rgb(105,104,95);
+$color-brownish-grey: 	rgb(105,104,95);
 $color-aqua-marine:		rgb(42,204,221);
 $color-aqua-blue:		rgb(10,215,237);
 $color-purpley-gray:	rgb(154,152,157);

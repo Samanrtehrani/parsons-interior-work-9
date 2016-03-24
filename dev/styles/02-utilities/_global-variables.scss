@@ -1,20 +1,75 @@
-// Change this variable to adjust the overall width of both the menu and the body.
-$width-nav: 300px;
+// =================================================================================
+// Base font sizing and leading.
+// =================================================================================
+$font-size: 16px;                                              // 16 pixels
+$leading: 1.5 * $font-size;                                    // 24 pixels
 
-$width-nav-item: ( $width-nav / 2 );
 
-$width-border: 2px;
+// =================================================================================
+// Body sizing.
+// =================================================================================
+$column-width: 90px;
+$split-gutter-width: 22px;
+$body-width: (12 * ($column-width + $split-gutter-width)); // 1344 pixels
 
-// This variable defines the uniform height of each nav item.
-$height-nav-item: 34px;
 
-$color-nav-links: #fff;
-$color-code-sample-link: #7d4793;
+$wrapper-full-width: $body-width;
+
+// =================================================================================
+// Measurement Grid-specific variables.
+// =================================================================================
+$grid-width: $column-width;                                            
+$grid-gutter: $split-gutter-width;
+$color-grid-column: rgba(200, 0, 0, 0.2);
+$color-grid-baseline: rgba(56, 255, 255, 0.8);
+
+// =================================================================================
+// Color Codes
+// =================================================================================
+
+$color-black:			rgb(0,0,0);
+$color-slate-grey:		rgb(81,77,88);
+$color-dark:			rgb(37,32,46);
+$color-white:			rgb(250,250,250);
+$color-red:				rgb(255,0,0);
+$color-green:			rgb(0,255,0);
+$color-blue:			rgb(0,0,255);
+$color-turquoise-green: rgb(10,237,143);
+$color-brownish-grey: 	rgb(105,104,95);
+$color-aqua-marine:		rgb(42,204,221);
+$color-aqua-blue:		rgb(10,215,237);
+$color-purpley-gray:	rgb(154,152,157);
+$color-pale-grey:		rgb(154,152,157);
+$color-light-grey:		rgb(213,232,221);
+
 $color-border: #21bde1;
 $color-foreground: #555;
 $color-background-nav: #f0ab3b;
 
-// The following variable is used in the anchor styled on line 62 of main.scss.
-// Increase the 0 to uniformly change the height of each inner nav item.
-//
-// $height-inner-list-items: ( $height-nav-item + 0 );
+
+// =================================================================================
+// Font Variables
+// =================================================================================
+
+
+
+// =================================================================================
+// The image `modular-grid.png` on line 18 below is used as a background image by
+// the file `index.html`. It should be updated by the user in order to compare it to
+// the background grid defined at the top of this document.
+// =================================================================================
+$users-comparison-bg-image: url('../img/modular-grid.png');
+$users-comparison-bg-image--height: 3111px;
+$users-comparison-bg-image--position-x: center;
+$users-comparison-bg-image--position-y: top;
+$users-comparison-bg-image--size-x: auto;
+$users-comparison-bg-image--size-y: auto;
+$users-comparison-bg-image--attachment: scroll;
+$users-comparison-bg-image--repeat: no-repeat;
+$users-comparison-bg-image--color: transparent;
+
+// =================================================================================
+//Header Variables:
+// =================================================================================
+$header-background-image-src: url('../img/header-background.png');
+$header-height-full: 100%; 

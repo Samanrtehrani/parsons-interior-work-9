@@ -2,7 +2,7 @@
 // Base font sizing and leading.
 // =================================================================================
 $font-size: 16px;                                              // 16 pixels
-$leading: 1.5 * $font-size;                                    // 24 pixels
+$leading: 1.6 * $font-size;                                    // 26 pixels
 
 
 // =================================================================================
@@ -50,8 +50,9 @@ $color-background-nav: #f0ab3b;
 // =================================================================================
 // Font Variables
 // =================================================================================
-
-
+$contax-sans-regular-stack : 'Contax Sans Regular', sans-serif;
+$contax-sans-italic-stack : 'Contax Sans Italic', sans-serif;
+$work-sans-stack : 'Work Sans', sans-serif;
 
 // =================================================================================
 // The image `modular-grid.png` on line 18 below is used as a background image by

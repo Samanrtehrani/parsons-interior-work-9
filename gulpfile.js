@@ -2,6 +2,7 @@
 
 'use strict';
 
+
     // Gulp plugins
 var gulp                           = require('gulp'),
     del                            = require('del'),
@@ -17,6 +18,7 @@ var gulp                           = require('gulp'),
     tempCache                      = require('gulp-cache'),
     browserSync                    = require('browser-sync'),
     reload                         = browserSync.reload,
+
 
     // Folder name variables
     devSourceFolder  = 'dev',
@@ -41,7 +43,13 @@ var gulp                           = require('gulp'),
     JSDevTargetFolder        = devTargetFolder  + '/' + JSFolder,
     JSProdTargetFolder       = prodTargetFolder + '/' + JSFolder,
     cssDevDestinationFolder  = devTargetFolder  + '/' + sassCSSFolder + '/',
-    cssProdDestinationFolder = prodTargetFolder + '/' + sassCSSFolder + '/';
+    cssProdDestinationFolder = prodTargetFolder + '/' + sassCSSFolder + '/',
+
+
+
+    browserPref              = 'default';
+
+  
 
 /**
  * VALIDATE HTML
@@ -56,6 +64,12 @@ var gulp                           = require('gulp'),
  * Regardless of whether your HTML validates or not, no files are copied to any
  * destination folder.
  */
+ gulp.task('safari', function () {
+    browserPref = 'safari';
+});
+gulp.task('chrome', function () {
+    browserPref = 'chrome';
+});
 gulp.task('validateHTML', function () {
     return gulp.src(HTMLFiles)
         .pipe(HTMLValidator());
@@ -289,7 +303,8 @@ gulp.task('serve',
                     devTargetFolder,
                     devSourceFolder + '/' + HTMLSourceFolder
                 ]
-            }
+            },
+            browser: browserPref
         });
 
         gulp.watch(devSourceFolder + '/' + JSFolder + '/*.js',

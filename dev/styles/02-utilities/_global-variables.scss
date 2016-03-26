@@ -2,7 +2,7 @@
 // Base font sizing and leading.
 // =================================================================================
 $font-size: 16px;                                              // 16 pixels
-$leading: 1.6 * $font-size;                                    // 26 pixels
+$leading: 1.6 ;           			                         // 26 pixels
 
 
 // =================================================================================
@@ -53,6 +53,15 @@ $color-background-nav: #f0ab3b;
 $contax-sans-regular-stack : 'Contax Sans Regular', sans-serif;
 $contax-sans-italic-stack : 'Contax Sans Italic', sans-serif;
 $work-sans-stack : 'Work Sans', sans-serif;
+$thin: 100;
+$extra-light: 200;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semi-bold: 600;
+
+
+
 
 // =================================================================================
 // The image `modular-grid.png` on line 18 below is used as a background image by
@@ -74,3 +83,8 @@ $users-comparison-bg-image--color: transparent;
 // =================================================================================
 $header-background-image-src: url('../img/header-background.png');
 $header-height-full: 100%; 
+$left-nav-arrow-image-src: url('../img/arrow-left.png');
+$left-nav-arrow-hover-image-src: url('../img/arrow-left-hover.png');
+$right-nav-arrow-image-src: url('../img/arrow-right.png');
+$right-nav-arrow-hover-image-src: url('../img/arrow-right-hover.png');
+$bottom-nav-arrow-image-src: url('../img/arrow-bottom.png');

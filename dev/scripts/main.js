@@ -1,9 +1,40 @@
 /*jslint browser: true, plusplus: true */
+/*eslint-disable no-console */
 /*global window, document */
+var useGrid = false;
 
 window.onload = function () {
     'use strict';
+    
+    if( useGrid ){
+        gridHandler();
+    }
 
+    var menuButton = document.getElementsByClassName('menu-controls')[0];
+    menuButton.addEventListener('click', function(event){
+        toggleMenu(event);}, false);
+};
+
+function toggleMenu(){
+    console.log('menu button clicked');
+    var menuPanel = document.getElementsByClassName('menu-panel')[0];
+    var menuContent = menuPanel.getElementsByClassName('menu-content')[0];
+
+    if( menuPanel.className.includes('open') ){
+        menuPanel.style.height = null;
+        menuPanel.className = 'menu-panel';
+        menuContent.style.display = 'none';
+    }else{
+        menuPanel.style.height = '100%';
+        menuPanel.className = 'menu-panel open';
+        menuContent.style.display = 'block';
+    }
+    
+
+}
+
+function gridHandler(){
+    console.log('hello');
     var body = document.querySelector('body'),
         firstChildOfBody = body.firstElementChild,
         gridLayer = document.createElement('div'),
@@ -12,7 +43,7 @@ window.onload = function () {
     gridLayer.setAttribute('id', 'column-baseline-grid');
 
     if (null !== firstChildOfBody) {
-        body.insertBefore(gridLayer, firstChildOfBody);
+       // body.insertBefore(gridLayer, firstChildOfBody);
     } else {
         body.textContent = 'The body element does not have a child element.';
     }
@@ -60,4 +91,4 @@ window.onload = function () {
             }
         }
     };
-};
+}

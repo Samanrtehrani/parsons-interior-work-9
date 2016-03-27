@@ -10,7 +10,7 @@ header{
       attachment: scroll; 
   	}
     position: relative;
-    z-index: 1;
+    z-index: 500;
     margin: 0px auto;
     height: $header-height-full;
     width: 100%;
@@ -50,12 +50,12 @@ header{
 }
 .menu-panel{
   width: 100%;
-  //height: 100%;
   position: fixed;
   top: 0px;
   left: 0px;
   text-align: center;
-  z-index: 10000;
+  z-index: 520;
+  //height: 100%; when menu comes in
 }
 .menu-controls{
   line-height: 1;
@@ -72,7 +72,48 @@ header{
   font-weight: $semi-bold;
   text-transform: uppercase;
 }
+.menu-content{
+  position:absolute;
+  display: none;
+  margin-top: 58px;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0.96;
+  background:{
+    color: $color-light-grey;
+  }
+
+}
+.menu-grid{
+  max-width: $wrapper-full-width;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  & .menu-column{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px 20px 20px 20px;
+    & .menu-row{
+      width:100%;
+      padding: 20px 20px 20px 20px;
+      font-family: $contax-sans-regular-stack;
+      font-size: $font-size * 4;
+      color: $color-dark;
+      line-height: 1.15;
+      text-align: left;
+    }
+  }
+}
 .right-nav{
+  z-index: 505;
   position: absolute;
   right: 20px;
   height: 100%;
@@ -106,6 +147,7 @@ header{
 }
 
 .left-nav{
+  z-index: 505;
   position: absolute;
   left:0px;
   height: 100%;
@@ -138,6 +180,7 @@ header{
   }
 }
 .bottom-nav{
+  z-index: 510;
   position: absolute;
   bottom: 0px;
   left:0px;

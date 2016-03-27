@@ -47,7 +47,7 @@ var gulp                           = require('gulp'),
 
 
 
-    browserPref              = 'default';
+    browserPref              = 'firefox';
 
   
 
@@ -66,6 +66,9 @@ var gulp                           = require('gulp'),
  */
  gulp.task('safari', function () {
     browserPref = 'safari';
+});
+ gulp.task('firefox', function () {
+    browserPref = 'firefox';
 });
 gulp.task('chrome', function () {
     browserPref = 'chrome';
@@ -182,7 +185,8 @@ gulp.task('lintJS', function () {
                 'quotes': [2, 'single'],
                 'linebreak-style': [2, 'unix'],
                 'semi': [2, 'always'],
-                'max-len': [2, 85,4]
+                'max-len': [2, 85,4],
+
             },
             'env': {
                 'node': true,

@@ -2,9 +2,5 @@
 	max-width: $wrapper-full-width;
 	margin: 0 auto;
 	position: relative;
-	
-}
-
-.full-screen-panel{
-	width: 100%;
+	z-index: 500;
 }

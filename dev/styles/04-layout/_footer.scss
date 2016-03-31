@@ -32,7 +32,9 @@ footer{
         & a{
 			color: $color-aqua-marine;
 			text-decoration: none;
+
 			&:visited{color: $color-aqua-marine;}
+			&:hover{color: $color-red;}
         }
 
 	}

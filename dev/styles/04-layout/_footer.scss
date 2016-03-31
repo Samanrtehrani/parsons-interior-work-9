@@ -1,6 +1,5 @@
 footer{
 	position: relative;
-	bottom:	0px;
 	width: 100%;
 	background:{
 		color: $color-white;
@@ -12,11 +11,31 @@ footer{
 	resize: horizontal;
 	justify-content: space-between;
 	width: 100%;
-	height: 70px;
+	padding:{
+		left: $split-gutter-width;
+		right: $split-gutter-width;
+		top: 20px;
+		bottom: 20px;
+
+	}
 	& .footer-section{
 		position: relative;
 		resize: horizontal;
 		width : 100/3%;
-		height:100%
+		height:100%;
+		font-family: $work-sans-stack;
+		color: $color-purpley-gray;
+		font-weight: 400;
+        font-size: $font-size;
+        line-height: 1.4;
+        text-decoration: none; 
+        & a{
+			color: $color-aqua-marine;
+			text-decoration: none;
+			&:visited{color: $color-aqua-marine;}
+        }
+
 	}
+
+
 }

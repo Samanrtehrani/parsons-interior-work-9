@@ -14,6 +14,9 @@ body, html{
 }
 section{
 	margin-bottom: 40px;
+	&:last-of-type{
+		margin-bottom: 0px;
+	}
 }
 
 #dean-letter-section{
@@ -193,18 +196,104 @@ section{
 
 
 #awards-section{
+	position: relative;
 	height: 480px;
-	span{
-		margin:{
-			right: $split-gutter-width + $full-column;
-			left: $split-gutter-width + $full-column;
+	background:{
+		color: $color-pale-grey;
+	}
+	& .main-wrapper{
+		height: 100%;
+		&> p{
+			position: relative;
+			font-family: $contax-sans-regular-stack ;
+	        font-size: $font-size * 5.5;
+	        color: $color-dark;
+	        line-height: 1;
+	        text-transform: uppercase;
+	        letter-spacing: -0.9px;
+	        text-decoration: none;
+			margin:{
+				right: $split-gutter-width + $full-column;
+				left: $split-gutter-width + $full-column;
+			}
+			top: 100px;
+			// ask roy about this!
+		}
+		
+
+		
+		& .awards-panel{
+			z-index: 520;
+			position: absolute;
+			right: $full-column + $split-gutter-width;
+			bottom:0px;
+			width: 650px;
+			height: 245px;
+			background:{
+				color: $color-turquoise-green;
+			}
+			& .award-winners{
+				padding:{
+					top:50px;
+					right:50px;
+					left:40px;
+				}
+				p{
+
+					font-family: $work-sans-stack;
+					font-weight: $thin;
+			        font-size: $font-size * 1.25;
+			        color: $color-dark;
+			        line-height: 1.7;
+			        letter-spacing: -0.2px;
+			        text-decoration: none;
+					span{
+						font-family: $work-sans-stack;
+						font-weight: $regular;
+				        font-size: $font-size * 1.25;
+				        color: $color-dark;
+				        line-height: 1.7;
+				        letter-spacing: -0.2px;
+				        text-decoration: none;
+					}
+				}
+				& .readmore{
+				    color: $color-white;
+				    letter-spacing: 0.3px;
+				    height: 100%;
+				    & a:visited {color: $color-white;}
+				    & a.arrow-right{
+						position: relative;
+						width:20px;
+						height: 20px;
+						line-height: 1.15;
+						margin:{
+							left: 10px;
+							top:3px;
+						}
+						text-decoration: none;
+						cursor: pointer;
+						background:{
+						image: $readmore-arrow-right-image-src;
+						repeat: no-repeat;
+						position: left center;
+						size:contain;
+						}
+						&:hover{
+						transform: scale(1.2,1.2);
+						}
+				    }
+				}
+			}
 		}
 	}
 }
 
 
 
-
+.clear{
+	clear: both;
+}
 
 
 

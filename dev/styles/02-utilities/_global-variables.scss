@@ -41,7 +41,7 @@ $color-aqua-blue:		rgb(10,215,237);
 $color-purpley-gray:	rgb(154,152,157);
 $color-pale-grey:		rgb(154,152,157);
 $color-light-grey:		rgb(213,232,221);
-
+$color-light-grey-transparent: rgba(213,232,221,0.1);
 $color-border: #21bde1;
 $color-foreground: #555;
 $color-background-nav: #f0ab3b;
@@ -96,5 +96,5 @@ $sub-menu-arrow-image-src: url('../img/arrow-sub-menu.png');
 
 
 
-
+$readmore-arrow-right-image-src: url('../img/arrow-readmore-right.png');
 $readmore-arrow-image-src: url('../img/arrow-readmore.png');

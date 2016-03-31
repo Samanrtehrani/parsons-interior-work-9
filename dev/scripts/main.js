@@ -19,15 +19,17 @@ function toggleMenu(){
     console.log('menu button clicked');
     var menuPanel = document.getElementsByClassName('menu-panel')[0];
     var menuContent = menuPanel.getElementsByClassName('menu-content')[0];
-
+    var menuGap = menuPanel.getElementsByClassName('menu-gap')[0];
     if( menuPanel.className.includes('open') ){
         menuPanel.style.height = null;
         menuPanel.className = 'menu-panel';
         menuContent.style.display = 'none';
+        menuGap.style.display = 'none';
     }else{
         menuPanel.style.height = '100%';
         menuPanel.className = 'menu-panel open';
         menuContent.style.display = 'block';
+        menuGap.style.display = 'block';
     }
     
 

@@ -56,6 +56,7 @@ header{
   text-align: center;
   z-index: 520;
   //height: 100%; when menu comes in
+
 }
 .menu-controls{
   line-height: 1;
@@ -79,12 +80,23 @@ header{
   top: 0px;
   left: 0px;
   width: 100%;
-  height: 100%;
+  height: 80vh;
   opacity: 0.96;
   background:{
     color: $color-light-grey;
   }
-
+}
+.menu-gap{
+  height: 20vh;
+  width:100%;
+  position:absolute;
+  bottom:-58px;
+  left:0px;
+  opacity: 0.96;
+  display: none;
+  background:{
+    color: $color-light-grey;
+  }
 }
 .menu-grid{
   max-width: $wrapper-full-width;
@@ -102,15 +114,44 @@ header{
     justify-content: space-between;
     margin: 20px 20px 20px 20px;
     & .menu-row{
+
       width:100%;
       padding: 20px 20px 20px 20px;
-      font-family: $contax-sans-regular-stack;
-      font-size: $font-size * 4;
-      color: $color-dark;
-      line-height: 1.15;
       text-align: left;
+      & a:first-child{
+
+        font-family: $contax-sans-regular-stack;
+        font-size: $font-size * 4;
+        color: $color-dark;
+        line-height: 1.15;
+        float:left;
+        text-decoration: none;      
+        &:hover{
+          color: $color-aqua-blue;
+        }
+      }
+      & div:not(:first-child):last-child{
+          position: relative;
+          padding: 1px 1px 1px 1px;
+          float:left;
+          width:22px;
+          height: 100%;
+          line-height: 1.15;
+          margin-left: 12px;
+          text-decoration: none;
+          cursor: pointer;
+          background:{
+            image: $sub-menu-arrow-image-src;
+            repeat: no-repeat;
+            position: center center;
+            size:contain;
+          }
+          &:hover{
+            transform: scale(1.2,1.2);
+          }
+      }
     }
-  }
+  }  
 }
 .right-nav{
   z-index: 505;

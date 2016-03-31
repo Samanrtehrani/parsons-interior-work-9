@@ -133,6 +133,7 @@ section{
 			position: relative;
 			margin:{
 				left: $full-column + $split-gutter-width;
+				bottom: 76px;
 			}
 			& p:first-child{
 				color: $color-turquoise-green;

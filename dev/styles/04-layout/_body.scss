@@ -12,6 +12,9 @@ body, html{
 	font-family: $work-sans-stack;
 	font-weight: $regular;
 }
+section{
+	margin-bottom: 40px;
+}
 
 #dean-letter-section{
 	& .main-wrapper{
@@ -24,7 +27,7 @@ body, html{
 		.section-header{
 			position: relative;
 			margin:{
-				left: $full-column;
+				left: $full-column + $split-gutter-width;
 			}
 			& p:first-child{
 				color: $color-turquoise-green;
@@ -58,7 +61,7 @@ body, html{
 				display: flex;
 				flex-direction: row;
 				justify-content: flex-start;
-				margin-bottom: 80px;
+				margin-bottom: 50px;
 				& .content-column{
 					position: relative;
 					width: 50%; 
@@ -118,10 +121,86 @@ body, html{
 }
 
 
+#director-letter-section{
+	& .main-wrapper{
+		padding:{
+			top: 100px;
+		}
+		.section-header{
+			position: relative;
+			margin:{
+				left: $full-column + $split-gutter-width;
+			}
+			& p:first-child{
+				color: $color-turquoise-green;
+				font-family: $work-sans-stack;
+				font-weight: 400;
+		        font-size: $font-size * 2;
+		        line-height: 1;
+		        letter-spacing: 0.2px;
+		        text-decoration: none; 
+			}
+			& p:not(:first-child):last-child{
+				font-family: $contax-sans-regular-stack ;
+		        font-size: $font-size * 5.5;
+		        color: $color-dark;
+		        line-height: 1;
+		        letter-spacing: 0.9px;
+		        text-decoration: none; 
+			}
+		}
+		.section-content{
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			margin:{
+				right: $full-column;
+				left: 2*$full-column;
+			}
+			height: 100%;
+			& .content-row{
+				position: relative;
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-start;
+				margin-bottom: 50px;
+				height: 100%;
+				& .content-column{
+					position: relative;
+					width: 33.33%;
+					margin-right: $split-gutter-width;
+					
+				}
+				& .content-column.one-column{
+					
+				}
+				& img.dean-letter-image{
+					position: absolute;
+					bottom: -30px;
+					left: 33.33%;
+					width: 700px;
+				}
+			}
+
+			& .content-row.short-gap {
+				margin-bottom: 20px;
+			}
+
+		}
+	}		
+}
 
 
-
-
+#awards-section{
+	height: 480px;
+	span{
+		margin:{
+			right: $split-gutter-width + $full-column;
+			left: $split-gutter-width + $full-column;
+		}
+	}
+}
 
 
 

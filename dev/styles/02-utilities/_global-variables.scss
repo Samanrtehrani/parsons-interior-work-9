@@ -11,7 +11,7 @@ $leading: 1.6 ;           			                         // 26 pixels
 $column-width: 90px;
 $split-gutter-width: 22px;
 $body-width: (12 * ($column-width + $split-gutter-width)); // 1344 pixels
-
+$full-column: ($column-width + $split-gutter-width) ;
 
 $wrapper-full-width: $body-width;
 
@@ -93,3 +93,8 @@ $bottom-nav-arrow-image-src: url('../img/arrow-bottom.png');
 //Menu Variables
 // =================================================================================
 $sub-menu-arrow-image-src: url('../img/arrow-sub-menu.png');
+
+
+
+
+$readmore-arrow-image-src: url('../img/arrow-readmore.png');

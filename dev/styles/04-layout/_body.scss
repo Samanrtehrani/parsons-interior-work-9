@@ -14,20 +14,143 @@ body, html{
 }
 
 #dean-letter-section{
-	
+	& .main-wrapper{
+		padding:{
+			top: 100px;
+		}
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		.section-header{
+			position: relative;
+			margin:{
+				left: $full-column;
+			}
+			& p:first-child{
+				color: $color-turquoise-green;
+				font-family: $work-sans-stack;
+				font-weight: 400;
+		        font-size: $font-size * 2;
+		        line-height: 1;
+		        letter-spacing: 0.2px;
+		        text-decoration: none; 
+			}
+			& p:not(:first-child):last-child{
+				font-family: $contax-sans-regular-stack ;
+		        font-size: $font-size * 5.5;
+		        color: $color-dark;
+		        line-height: 1;
+		        letter-spacing: 0.9px;
+		        text-decoration: none; 
+			}
+		}
+		.section-content{
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			width: 6 * $full-column;
+			margin:{
+				right: $full-column;
+			}
+			
+			& .content-row{
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-start;
+				margin-bottom: 80px;
+				& .content-column{
+					position: relative;
+					width: 50%; 
+					margin-right: $split-gutter-width;
+					& img.dean-letter-image{
+						position: absolute;
+						top: 12px;
+						right: 60px;
+						width: 700px;
+					}
+				}
+			}
+			& .content-row.short-gap {
+				margin-bottom: 20px;
+			}
+
+		}
+	}		
+}
+.readmore{
+	font-family: $work-sans-stack ;
+	font-weight: $semi-bold;
+    font-size: $font-size * 0.9;
+    color: $color-aqua-marine;
+    line-height: 1.9;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    height: 100%;
+    & a:visited {color: $color-aqua-marine;}
+    & a{
+    	position: relative;
+    	float:left;
+    	text-decoration: none;
+    }
+    & a.arrow-down{
+		position: relative;
+		width:15px;
+		height: 100%;
+		line-height: 1.15;
+		margin:{
+			left: 10px;
+		}
+		text-decoration: none;
+		cursor: pointer;
+		background:{
+		image: $readmore-arrow-image-src;
+		repeat: no-repeat;
+		position: left center;
+		size:contain;
+		}
+		&:hover{
+		transform: scale(1.2,1.2);
+		}
+    }
 }
 
-.section-header{
-	position: relative;
 
-	& p:first-child{
-		color: $color-turquoise-green;
-		font-family: $work-sans-stack;
-		font-weight: 400;
-        font-size: $font-size * 2;
-        color: $color-dark;
-        line-height: 1;
-        text-decoration: none; 
-	}
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -28,26 +28,48 @@ header{
   position: relative;
   float: right;
   height: 100%;
+  & .header-panel{
+    position: absolute;
+    right: 0;
+    & .school-name{
+      font-family: $work-sans-stack;
+      font-size: 3.5vh;
+      line-height: 1;
+      color: $color-slate-grey;
+    }
+    & .edition-name{
+      font-family: $contax-sans-regular-stack;
+      font-size: 20vh;
+      color: $color-dark;
+      line-height: 1;
+    }
+    & .edition-info{
+      font-family: $work-sans-stack;
+      font-size: 5vh;
+      color: $color-slate-grey;
+      white-space:nowrap;
+    }
+  }
+
 
 }
-.header-container .school-name{
-  font-family: $work-sans-stack;
-  font-size: 3.5vh;
-  line-height: 1;
-  color: $color-slate-grey;
+@media all and ( min-height: 700px ){
+  .header-container .header-panel .school-name{
+    font-size: 25px;
+  }
 }
-.header-container .edition-name{
-  font-family: $contax-sans-regular-stack;
-  font-size: 20vh;
-  color: $color-dark;
-  line-height: 1;
+@media all and ( min-height: 700px ){
+  .header-container .header-panel .edition-info{
+    font-size: 40px;
+  }
+}
+@media all and ( min-height: 700px ){
+ .header-container .header-panel .edition-name {
+    font-size: 160px;
+  }  
+  
+}
 
-}
-.header-container .edition-info{
-  font-family: $work-sans-stack;
-  font-size: 5vh;
-  color: $color-slate-grey;
-}
 .menu-panel{
   width: 100%;
   position: fixed;
@@ -56,6 +78,13 @@ header{
   text-align: center;
   z-index: 520;
   //height: 100%; when menu comes in
+}
+.menu-panel.open{
+  
+  opacity: 0.96;
+  background:{
+    color: $color-light-grey;
+  }
 
 }
 .menu-controls{
@@ -130,7 +159,7 @@ header{
           color: $color-aqua-blue;
         }
       }
-      & div:not(:first-child):last-child{
+      & a.arrow-in{
           position: relative;
           padding: 1px 1px 1px 1px;
           float:left;

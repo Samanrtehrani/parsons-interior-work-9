@@ -50,6 +50,26 @@ var gulp                           = require('gulp'),
     browserPref              = 'firefox';
 
   
+/**
+ * CHOOSE THE BROWSER PREFERENCE
+ * This is an easy hack into letting the gulp know which browser to 
+ * serve on through command line. By default, with inserting the command 
+ * '$ gulp serve' gulp attempts to serve the development server and will 
+ * open 'localhost:9000' in system's default browser. 
+ * In case you are interested to promptly open the site in an specific 
+ * browser, these task will let you do so. you can signal your desired preference
+ * with this command 'gulp serve safari' or 'gulp serve chrome'
+ */
+gulp.task('safari', function () {
+    browserPref = 'safari';
+});
+ gulp.task('firefox', function () {
+    browserPref = 'firefox';
+});
+gulp.task('chrome', function () {
+    browserPref = 'chrome';
+});
+
 
 /**
  * VALIDATE HTML
@@ -64,15 +84,6 @@ var gulp                           = require('gulp'),
  * Regardless of whether your HTML validates or not, no files are copied to any
  * destination folder.
  */
- gulp.task('safari', function () {
-    browserPref = 'safari';
-});
- gulp.task('firefox', function () {
-    browserPref = 'firefox';
-});
-gulp.task('chrome', function () {
-    browserPref = 'chrome';
-});
 gulp.task('validateHTML', function () {
     return gulp.src(HTMLFiles)
         .pipe(HTMLValidator());

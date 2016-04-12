@@ -13,6 +13,9 @@ header{
     z-index: 500;
     margin: 0px auto;
     height: $header-height-full;
+    &.fixed-height{
+      height: $header-height-fixed;;
+    }
     width: 100%;
 }
 .header-wrapper{
@@ -20,39 +23,52 @@ header{
   left: 0px;
   width: 50%;
   height: 100%;
-}
-.header-container{
-  margin:{
-    top: 29vh;
+  .header-container{
+    margin:{
+      top: 29vh;
+    }
+    position: relative;
+    float: right;
+    height: 100%;
+    & .header-panel{
+      position: absolute;
+      right: 0;
+      & .school-name{
+        font-family: $work-sans-stack;
+        font-size: 3.5vh;
+        line-height: 1;
+        color: $color-slate-grey;
+      }
+      & .edition-name{
+        font-family: $contax-sans-regular-stack;
+        font-size: 20vh;
+        color: $color-dark;
+        line-height: 1;
+      }
+      & .edition-info{
+        font-family: $work-sans-stack;
+        font-size: 5vh;
+        color: $color-slate-grey;
+        white-space:nowrap;
+      }      
+    }
   }
-  position: relative;
-  float: right;
-  height: 100%;
-  & .header-panel{
+  .student-header-container{
+    
     position: absolute;
-    right: 0;
-    & .school-name{
-      font-family: $work-sans-stack;
-      font-size: 3.5vh;
-      line-height: 1;
-      color: $color-slate-grey;
-    }
-    & .edition-name{
-      font-family: $contax-sans-regular-stack;
-      font-size: 20vh;
-      color: $color-dark;
-      line-height: 1;
-    }
-    & .edition-info{
-      font-family: $work-sans-stack;
-      font-size: 5vh;
-      color: $color-slate-grey;
-      white-space:nowrap;
+    bottom: 0px;
+    left: 0px;
+    height: 50vh;
+    width: 5*$full-column - $split-gutter-width;
+    margin-left: $full-column + $split-gutter-width;
+    & .student-header-panel{
+      position: absolute;
+      right: 0;
+         
     }
   }
-
-
 }
+
 @media all and ( min-height: 700px ){
   .header-container .header-panel .school-name{
     font-size: 25px;

@@ -1,7 +1,20 @@
 /*jslint browser: true, plusplus: true */
 /*eslint-disable no-console */
 /*global window, document */
+
+
+
+/** START
+ * GLOBAL VARIABLES
+ */
+
 var useGrid = false;
+//var body = null;
+
+/** END
+ * GLOBAL VARIABLES
+ */ 
+
 
 window.onload = function () {
     'use strict';
@@ -10,11 +23,18 @@ window.onload = function () {
         gridHandler();
     }
 
+    //body = document.querySelector('body');
+    
+
     var menuButton = document.getElementsByClassName('menu-controls')[0];
     menuButton.addEventListener('click', function(event){
         toggleMenu(event);}, false);
 };
 
+
+/** START
+ * MENU SECTION
+ */
 function toggleMenu(){
     console.log('menu button clicked');
     var menuPanel = document.getElementsByClassName('menu-panel')[0];
@@ -34,9 +54,14 @@ function toggleMenu(){
     
 
 }
+/** END
+ * MENU SECTION
+ */
 
+/** START
+ * GRID HANDLER SECTION
+ */
 function gridHandler(){
-    console.log('hello');
     var body = document.querySelector('body'),
         firstChildOfBody = body.firstElementChild,
         gridLayer = document.createElement('div'),
@@ -93,4 +118,12 @@ function gridHandler(){
             }
         }
     };
+    
 }
+/** END
+* GRID HANDLER SECTION 
+*/
+
+
+
+

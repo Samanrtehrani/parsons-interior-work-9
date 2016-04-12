@@ -83,6 +83,7 @@ $users-comparison-bg-image--color: transparent;
 // =================================================================================
 $header-background-image-src: url('../img/header-background.png');
 $header-height-full: 100%; 
+$header-height-fixed: 600px; 
 $left-nav-arrow-image-src: url('../img/arrow-left.png');
 $left-nav-arrow-hover-image-src: url('../img/arrow-left-hover.png');
 $right-nav-arrow-image-src: url('../img/arrow-right.png');
@@ -98,3 +99,10 @@ $sub-menu-arrow-image-src: url('../img/arrow-sub-menu.png');
 
 $readmore-arrow-right-image-src: url('../img/arrow-readmore-right.png');
 $readmore-arrow-image-src: url('../img/arrow-readmore.png');
+
+
+// =================================================================================
+//Student Directory
+// =================================================================================
+$project-image-width : 180px;
+$project-image-height : $project-image-width ;

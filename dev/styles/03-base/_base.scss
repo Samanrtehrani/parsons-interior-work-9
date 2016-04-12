@@ -4,3 +4,11 @@
 	position: relative;
 	z-index: 500;
 }
+h1{
+   position: relative;
+   color: $color-dark;
+   font-size: 6*$font-size;
+   line-height: 0.95;
+   font-family: $contax-sans-regular-stack;
+   letter-spacing: -0.5px;
+}

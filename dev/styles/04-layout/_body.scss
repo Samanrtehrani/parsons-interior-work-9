@@ -275,11 +275,12 @@ section{
 						}
 						text-decoration: none;
 						cursor: pointer;
+						transition: all 200ms;
 						background:{
-						image: $readmore-arrow-right-image-src;
-						repeat: no-repeat;
-						position: left center;
-						size:contain;
+							image: $readmore-arrow-right-image-src;
+							repeat: no-repeat;
+							position: left center;
+							size:contain;
 						}
 						&:hover{
 						transform: scale(1.2,1.2);
@@ -298,30 +299,28 @@ section{
 	}
 }
 
-#projects-directory{
-	& .projects-division{
+.division{
 
-		margin:{
-			top: $full-column;
-			right: $full-column;
-			left: $full-column;
-		}
+	margin:{
+		top: $full-column;
+		right: $full-column;
+		left: $full-column;
+	}
+	border-top:  1px solid $color-slate-grey;
+	& .division-title{
+		position: relative;
+		font-family: $contax-sans-regular-stack;
+		font-size: $font-size * 1.5;
+		color: $color-turquoise-green;
+		line-height: 1.2;
+		text-decoration: none;
+		margin-top: 15px;
+	}
+	& .division-content{
 		position: relative;
 		display: flex;
 		flex-flow: row wrap;
 		justify-content: space-between;
-		border-top:  1px solid $color-slate-grey;
-		& .division-title{
-			position: absolute;
-			left:0;
-			top:0;
-			font-family: $contax-sans-regular-stack;
-			font-size: $font-size * 1.5;
-			color: $color-turquoise-green;
-			line-height: 1.2;
-			text-decoration: none;
-			margin-top: 15px;
-		}
 		& .project{
 			width: 330px;
 			margin:{
@@ -379,6 +378,7 @@ section{
 						position: center center;
 						size:contain;
 					}
+					transition: all 200ms;
 					&:hover{
 						transform: scale(1.2,1.2);
 					}
@@ -392,8 +392,41 @@ section{
 				text-decoration: none;
 				margin-top: 4px;
 			}
+		}
+	}
+}
 
-			
+#sticky-navigation{
+	width: 5* $full-column;
+	margin: 0 auto;
+
+	&>ul{
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		&>li{
+			& a{
+				font-family: $work-sans-stack;
+				font-weight: $medium;
+				font-size: $font-size * 1.25;
+				color: $color-aqua-marine;
+				line-height: 1.8;
+				text-decoration: none;
+			}
+			cursor: pointer;
+			transition: all 200ms;
+			&:hover{
+				transform: scale(1.8,2.4);
+			}
+		}
+	}
+}
+#faculty-directory{
+	& .division{
+		margin:{
+			top: $full-column;
+			right: 2*$full-column;
+			left: 2*$full-column;
 		}
 	}
 }

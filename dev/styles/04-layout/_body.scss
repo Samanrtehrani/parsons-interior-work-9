@@ -325,7 +325,6 @@ section{
 			width: 330px;
 			margin:{
 				top: 90px;
-				
 			}
 			text-align: center;
 			&:empty {
@@ -428,6 +427,34 @@ section{
 			right: 2*$full-column;
 			left: 2*$full-column;
 		}
+		& .faculty{
+			width: 4* $full-column;
+			margin:{
+				top: 50px;
+			}
+			& .faculty-title{
+				font-family: $contax-sans-regular-stack;
+				font-size: $font-size * 1.25;
+				color: $color-slate-grey;
+				line-height: 1.15;
+				text-decoration: none;
+			}
+			& .faculty-degree, & .faculty-work {
+				font-family: $contax-sans-regular-stack;
+				font-size: $font-size * 1.25;
+				color: $color-purpley-gray;
+				line-height: 1.5;
+				text-decoration: none;
+			}
+			& .faculty-email a, & .faculty-website a{
+				font-family: $work-sans-stack;
+				font-size: $font-size * 1;
+				color: $color-aqua-marine;
+				line-height: 1;
+				text-decoration: none;
+			}
+		}
+		
 	}
 }
 .clear{

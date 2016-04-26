@@ -63,11 +63,11 @@ var gulp                           = require('gulp'),
 gulp.task('safari', function () {
     browserPref = 'safari';
 });
- gulp.task('firefox', function () {
+gulp.task('firefox', function () {
     browserPref = 'firefox';
 });
 gulp.task('chrome', function () {
-    browserPref = 'chrome';
+    browserPref = 'google chrome';
 });
 
 

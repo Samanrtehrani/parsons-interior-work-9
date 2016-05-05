@@ -306,7 +306,7 @@ section{
 		right: $full-column;
 		left: $full-column;
 	}
-	border-top:  1px solid $color-slate-grey;
+	border-top:  1px solid rgba(211,210,213,1.0);
 	& .division-title{
 		position: relative;
 		font-family: $contax-sans-regular-stack;
@@ -343,12 +343,10 @@ section{
 					width: $project-image-width;
 					height: $project-image-height;
 					border-radius: 50%;
-				   box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.5);
 				   color: transparent;
 				   opacity: 1;
 				   transition: all 150ms;
 				   &:hover {
-		         	box-shadow: 0px 10px 10px 1px $color-dark;
 		      	}
 				}
 			}
@@ -420,7 +418,11 @@ section{
 		}
 	}
 }
+#projects-directory{
+	margin-bottom:150px;
+}
 #faculty-directory{
+	margin-bottom:150px;
 	& .division{
 		margin:{
 			top: $full-column;
@@ -428,7 +430,7 @@ section{
 			left: 2*$full-column;
 		}
 		& .faculty{
-			width: 4* $full-column;
+			width: 400px;
 			margin:{
 				top: 50px;
 			}
@@ -438,6 +440,7 @@ section{
 				color: $color-slate-grey;
 				line-height: 1.15;
 				text-decoration: none;
+				text-transform: uppercase;
 			}
 			& .faculty-degree, & .faculty-work {
 				font-family: $contax-sans-regular-stack;

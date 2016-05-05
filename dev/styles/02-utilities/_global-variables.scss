@@ -11,7 +11,7 @@ $leading: 1.6 ;           			                         // 26 pixels
 $column-width: 90px;
 $split-gutter-width: 22px;
 $body-width: (12 * ($column-width + $split-gutter-width)); // 1344 pixels
-$full-column: ($column-width + $split-gutter-width) ;
+$full-column: ($column-width + $split-gutter-width) ; //112px
 
 $wrapper-full-width: $body-width;
 
@@ -83,7 +83,7 @@ $users-comparison-bg-image--color: transparent;
 // =================================================================================
 $header-background-image-src: url('../img/header-background.png');
 $header-height-full: 100%; 
-$header-height-fixed: 600px; 
+$header-height-fixed: 400px; 
 $left-nav-arrow-image-src: url('../img/arrow-left.png');
 $left-nav-arrow-hover-image-src: url('../img/arrow-left-hover.png');
 $right-nav-arrow-image-src: url('../img/arrow-right.png');
@@ -104,5 +104,5 @@ $readmore-arrow-image-src: url('../img/arrow-readmore.png');
 // =================================================================================
 //Student Directory
 // =================================================================================
-$project-image-width : 180px;
+$project-image-width : 142px;
 $project-image-height : $project-image-width ;

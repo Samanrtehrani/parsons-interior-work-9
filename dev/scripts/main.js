@@ -39,20 +39,16 @@ function toggleMenu(){
     console.log('menu button clicked');
     var menuPanel = document.getElementsByClassName('menu-panel')[0];
     var menuContent = menuPanel.getElementsByClassName('menu-content')[0];
-    var menuGap = menuPanel.getElementsByClassName('menu-gap')[0];
-    if( menuPanel.className.includes('open') ){
-        menuPanel.style.height = null;
-        menuPanel.className = 'menu-panel';
-        menuContent.style.display = 'none';
-        menuGap.style.display = 'none';
+    var menuControls = menuPanel.getElementsByClassName('menu-controls')[0];
+    if( menuPanel.classList.contains('open') ){
+        menuPanel.classList.remove('open');
+        menuContent.classList.remove('open');
+        menuControls.classList.remove('open');
     }else{
-        menuPanel.style.height = '100%';
-        menuPanel.className = 'menu-panel open';
-        menuContent.style.display = 'block';
-        menuGap.style.display = 'block';
+        menuPanel.classList.add('open');
+        menuContent.classList.add('open');
+        menuControls.classList.add('open');
     }
-    
-
 }
 /** END
  * MENU SECTION

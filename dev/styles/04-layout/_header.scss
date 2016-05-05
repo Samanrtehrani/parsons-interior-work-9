@@ -71,116 +71,157 @@ header{
 .menu-panel{
   width: 100%;
   position: fixed;
+  height: 78px;
   top: 0px;
   left: 0px;
   text-align: center;
   z-index: 520;
-  //background-color: rgba(255,255,255,0.8);
-  //height: 100%; when menu comes in
-}
-.menu-panel.open{
-  
-  opacity: 0.96;
+  opacity: 1.0;
   background:{
-    color: $color-light-grey;
+    color: transparent;
   }
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
 
+  //height: 100%; when menu comes in
+  &.open{
+    opacity: 0.96;
+    background:{
+      color: $color-light-grey;
+    }
+  }
 }
 .menu-controls{
-  line-height: 1;
+  line-height: 42px;
   font-size: 1.2rem;
   position: relative;
-  margin: 8px auto 0 auto;
-  padding: 12px 6px 12px 6px;
+  text-align: center;
+  z-index: 530;
+  margin: 15px auto 15px auto;
   width: 66px;
-  border-top: 3px solid $color-slate-grey;
-  border-bottom: 3px solid $color-slate-grey;
+  height: 42px;
+  background:{
+    color: transparent;
+  }
+  
   cursor: pointer;
   color: $color-dark;
   font-family: $work-sans-stack;
   font-weight: $semi-bold;
   text-transform: uppercase;
+  transition: all 70ms ease-in 300ms;
+  &.open{
+    color: rgba(0,0,0,0);
+    transition: all 70ms ease-in 10ms;
+  }
+  &:before{
+    position: absolute;
+    left: 0px;
+    top:0px;
+    content: ' ';
+    height: 3px;
+    width: 66px;
+    background-color: #333;
+    transition: transform 200ms ease-out 0ms ,top 80ms ease-in 220ms;
+  }
+  &.open:before {
+    top: 21px;
+    transform: rotate(45deg);
+    transition:  top 80ms ease-in 0ms , transform 200ms ease-out 120ms ;
+  }
+
+  &:after{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    content: ' ';
+    height: 3px;
+    width: 66px;
+    transition:  transform 300ms ease-out 0ms ,bottom 80ms ease-in 220ms;
+    background-color: #333; 
+  }
+  
+  &.open:after {
+    bottom: 18px;
+    transform: rotate(-45deg);
+    transition:  bottom 80ms ease-in 0ms , transform 200ms ease-out 120ms; 
+  }
 }
 .menu-content{
   position:absolute;
   display: none;
-  margin-top: 58px;
+  padding:{
+    top:78px;
+    bottom:78px;
+  }
   top: 0px;
   left: 0px;
   width: 100%;
-  height: 80vh;
-  opacity: 0.96;
-  transition: all 1000ms;
-  background:{
-    color: $color-light-grey;
-  }
-}
-.menu-gap{
-  height: 20vh;
-  width:100%;
-  position:absolute;
-  bottom:-58px;
-  left:0px;
-  opacity: 0.96;
+  height: 100vh;
+  z-index: 525;
   display: none;
+  transition: all 800ms ;
   background:{
-    color: $color-light-grey;
+    color: rgba(213,232,221,1);
+  }
+  &.open{
+    display: block;
+    background:{
+      color: rgba(213,232,221,0.96);
+    }
   }
 }
 .menu-grid{
   max-width: $wrapper-full-width;
   margin: 0 auto;
   width: 100%;
-  height: 100%;
+  height: 90%;
+  margin-bottom: 78px;
+
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   justify-content: space-between;
-  & .menu-column{
-    height: 100%;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
+  align-content: space-around;
+  & .menu-item{
     justify-content: space-between;
-    margin: 20px 20px 20px 20px;
-    & .menu-row{
+    width:50%;
+    height:$font-size * 4 * 1.15; //centering the text
+    text-align: left;
+    
+    & a:first-child{
 
-      width:100%;
-      padding: 20px 20px 20px 20px;
-      text-align: left;
-      & a:first-child{
-
-        font-family: $contax-sans-regular-stack;
-        font-size: $font-size * 4;
-        color: $color-dark;
-        line-height: 1.15;
-        float:left;
-        text-decoration: none;      
-        &:hover{
-          color: $color-aqua-blue;
-        }
-      }
-      & a.arrow-in{
-          position: relative;
-          padding: 1px 1px 1px 1px;
-          float:left;
-          width:22px;
-          height: 100%;
-          line-height: 1.15;
-          margin-left: 12px;
-          text-decoration: none;
-          cursor: pointer;
-          background:{
-            image: $sub-menu-arrow-image-src;
-            repeat: no-repeat;
-            position: center center;
-            size:contain;
-          }
-          &:hover{
-            transform: scale(1.2,1.2);
-          }
+      font-family: $contax-sans-regular-stack;
+      font-size: $font-size * 4;
+      color: $color-dark;
+      line-height: 1.15;
+      float:left;
+      text-decoration: none;      
+      &:hover{
+        color: $color-aqua-blue;
       }
     }
-  }  
+    & a.arrow-in{
+        position: relative;
+        padding: 1px 1px 1px 1px;
+        float:left;
+        width:22px;
+        height: 100%;
+        line-height: 1.15;
+        margin-left: 12px;
+        text-decoration: none;
+        cursor: pointer;
+        background:{
+          image: $sub-menu-arrow-image-src;
+          repeat: no-repeat;
+          position: center center;
+          size:contain;
+        }
+        &:hover{
+          transform: scale(1.2,1.2);
+        }
+    }
+  }
 }
 .right-nav{
   z-index: 505;

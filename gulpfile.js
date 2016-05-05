@@ -98,8 +98,8 @@ gulp.task('validateHTML', function () {
 gulp.task('compressHTML', function() {
     return gulp.src(HTMLFiles)
         .pipe(HTMLMinifier({
-            removeComments: true,
-            collapseWhitespace: true
+            removeComments: true//,
+            //collapseWhitespace: true
         }))
         .pipe(gulp.dest(prodTargetFolder));
 });
@@ -138,7 +138,7 @@ gulp.task('compileCSSForDev', function () {
 gulp.task('compileCSSForProd', function () {
     return gulp.src(sassMainFile)
         .pipe(sass({
-            outputStyle: 'compressed',
+            outputStyle: 'expanded',
             precision: 10
         }).on('error', sass.logError))
         .pipe(browserSpecificPrefixGenerator({
@@ -269,7 +269,7 @@ gulp.task('build',
         'compressHTML',
         'compileCSSForProd',
         'lintJS',
-        'concatenateJSForProd',
+        //'concatenateJSForProd',
         'compressThenCopyImagesToProdFolder',
         'copyUnprocessedAssetsToProdFolder'
     ]);

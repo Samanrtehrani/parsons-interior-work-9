@@ -353,7 +353,7 @@ section{
 			& .project-artist{
 				display: flex;
 				flex-flow: row nowrap;
-				justify-content: flex-start;
+				justify-content: center;
 				& a{
 					font-family: $contax-sans-regular-stack;
 					font-size: $font-size * 2.25;

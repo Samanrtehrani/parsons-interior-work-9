@@ -128,7 +128,7 @@ header{
   &.open:before {
     top: 21px;
     transform: rotate(45deg);
-    transition:  top 80ms ease-in 0ms , transform 200ms ease-out 120ms ;
+    transition:  top 80ms ease-in 0ms , transform 300ms ease-out 120ms ;
   }
 
   &:after{
@@ -145,7 +145,7 @@ header{
   &.open:after {
     bottom: 18px;
     transform: rotate(-45deg);
-    transition:  bottom 80ms ease-in 0ms , transform 200ms ease-out 120ms; 
+    transition:  bottom 80ms ease-in 0ms , transform 300ms ease-out 120ms; 
   }
 }
 .menu-content{
@@ -183,6 +183,16 @@ header{
   flex-flow: row wrap;
   justify-content: space-between;
   align-content: space-around;
+  transition: all 800ms ;
+  background:{
+    color: rgba(213,232,221,1);
+  }
+  &.open{
+    display: block;
+    background:{
+      color: rgba(213,232,221,0.96);
+    }
+  }
   & .menu-item{
     justify-content: space-between;
     width:50%;

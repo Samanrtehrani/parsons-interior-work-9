@@ -269,7 +269,7 @@ gulp.task('build',
         'compressHTML',
         'compileCSSForProd',
         'lintJS',
-        //'concatenateJSForProd',
+        'concatenateJSForProd',
         'compressThenCopyImagesToProdFolder',
         'copyUnprocessedAssetsToProdFolder'
     ]);

@@ -22,15 +22,15 @@ window.onload = function () {
         gridHandler();
     }
     var facultyNavigation = document.querySelector('#sticky-navigation');
-    var stickyNavigation = document.querySelector('#sticky-navigation .navigation');
-    var navOffsetTop = facultyNavigation.offsetTop;
-    var menuHeight = 86.6 + 5;
-
+    var stickyNavigation,navOffsetTop,menuHeight;
     var menuButton = document.getElementsByClassName('menu-controls')[0];
     menuButton.addEventListener('click', function(event){
         toggleMenu(event);}, false);
     
     if( facultyNavigation ){
+        stickyNavigation = document.querySelector('#sticky-navigation .navigation');
+        navOffsetTop = facultyNavigation.offsetTop;
+        menuHeight = 86.6 + 5;
         var last_known_scroll_position = 0;
         var ticking = false;
 
@@ -45,6 +45,7 @@ window.onload = function () {
             ticking = true;
         });
     }
+
     function checkStickyNav(scroll_pos){
         if( (scroll_pos + menuHeight ) >= navOffsetTop ){
             if( !stickyNavigation.classList.contains('sticked') ){
@@ -66,6 +67,7 @@ window.onload = function () {
  * MENU SECTION
  */
 function toggleMenu(){
+    console.log('aa');
     var menuPanel = document.getElementsByClassName('menu-panel')[0];
     var menuContent = menuPanel.getElementsByClassName('menu-content')[0];
     var menuControls = menuPanel.getElementsByClassName('menu-controls')[0];

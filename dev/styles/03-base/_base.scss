@@ -14,6 +14,27 @@ h1{
 }
 
 a{
-   color: $color-turquoise-green;
+   color: $color-aqua-blue;
    text-decoration: none;
+}
+br{
+   line-height: 45px;
+}
+p{
+   font-size: 1*$font-size;
+   line-height: 1.8;
+   font-family: $work-sans-stack;
+   font-weight: $regular;
+   color: $color-brownish-grey;
+   &.cap-letter{
+      &::first-letter{
+         font-size: 4.3*$font-size;
+         line-height: 30px;
+         float: left;
+         padding: 2px;
+         padding-top:20px;
+         font-family: $contax-sans-regular-stack;
+         color: $color-black;    
+      }
+   }
 }

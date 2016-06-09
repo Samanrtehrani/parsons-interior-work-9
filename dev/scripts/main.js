@@ -30,7 +30,7 @@ window.onload = function () {
     if( facultyNavigation ){
         stickyNavigation = document.querySelector('#sticky-navigation .navigation');
         navOffsetTop = facultyNavigation.offsetTop;
-        menuHeight = 86.6 + 5;
+        menuHeight = 79 ;
         var last_known_scroll_position = 0;
         var ticking = false;
 

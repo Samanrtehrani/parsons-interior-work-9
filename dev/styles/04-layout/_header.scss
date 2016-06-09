@@ -13,8 +13,11 @@ header{
     z-index: 500;
     margin: 0px auto;
     height: $header-height-full;
-    &.fixed-height{
-      height: $header-height-fixed;;
+    &.fixed-height-750{
+      height: $header-height-fixed-750;
+    }
+    &.fixed-height-400,&.fixed-height{
+      height: $header-height-fixed-400;
     }
     width: 100%;
     overflow: hidden;
@@ -84,6 +87,7 @@ nav{
   position: absolute;
   top: 0px;
   left: 0px;
+
   & .sticky-background{
     position: fixed;
     z-index: 490;

@@ -674,6 +674,8 @@ section{
 					max-width: 805px;
 				}
 				& .text-block{
+					border-top: 2px solid rgb(211,210,213);
+					padding-top: 22px;
 					& p{
 						& span{
 							font-size: 1.1*$font-size;
@@ -716,222 +718,144 @@ section{
 					}
 				}
 			}
-			& .row-3{
+			& .row-3, .row-5, .row-9, .row-12{
 				margin-top: 60px;
 			}
 			& .row-4{
 				display: flex;
 				flex-flow: row nowrap;
 				align-self: stretch;
-				justify-content: space-between;
+				justify-content: flex-start;
 				
 				margin-top: 60px;
 				& .text-block{
+					margin-right: 4vw;
+					flex-shrink: 1;
 					& p{
 						max-width: 277px;
+						& span{
+							font-size: 3*$font-size;
+							line-height: 1;
+							font-family: $contax-sans-regular-stack;
+		  					color: $color-dark;
+		  					margin-bottom: 20px;
+						}
 					}
 					
 				}
 				& .slider{
 					max-width: 645px;
+					flex-shrink: 3;
 				}
 				& .gap:nth-of-type(1){
-					flex: 0 1 135px;
+					flex:0 5 135px;
 				}
 				& .gap:last-of-type{
-					flex: 0 2 250px;
-				}
-			}
-			& .row-5{
-				display: flex;
-				flex-flow: row nowrap;
-				margin-top: 60px;
-				align-items: center;
-				padding-right: 11%;
-				align-self: stretch;
-				justify-content: space-between;
-				& .text-block{
-					& p{
-						max-width: 365px;
-					}
-					
-				}
-				& .slider{
-					max-width: 764px;
+					flex: 0 8 250px;
 				}
 			}
 			& .row-6{
 				display: flex;
 				flex-flow: row nowrap;
-				margin-top: 60px;
-				padding-right: 10%;
-				padding-left:18%;
 				align-self: stretch;
-				justify-content: space-between;
-				align-items: flex-start;
-				& .text-block{
-					& p{
-						max-width: 520px;
-
-					}
-					
-				}
+				justify-content: flex-start;
+				
+				margin-top: 60px;
 				& .slider{
-					max-width: 400px;
+					max-width: 645px;
+					flex-shrink: 0;
+				}
+				& .gap:nth-of-type(1){
+					flex:0 1 135px;
+				}
+				& .gap:last-of-type{
+					flex: 0 2 474px;
 				}
 			}
 			& .row-7{
 				display: flex;
 				flex-flow: row nowrap;
-				margin-top: 60px;
-				padding-right: 24%;
-				padding-left:10%;
 				align-self: stretch;
-				justify-content: space-between;
-				align-items: flex-start;
-				& .text-block{
-					& p{
-						max-width: 370px;
-					}
-				}
+				justify-content: flex-start;
+				
+				margin-top: 60px;
 				& .slider{
-					max-width: 426px;
+					max-width: 645px;
+					flex-shrink: 0;
+				}
+				& .gap:nth-of-type(1){
+					flex:0 1 470px;
+				}
+				& .gap:last-of-type{
+					flex: 0 2 135px;
 				}
 			}
 			& .row-8{
 				display: flex;
 				flex-flow: row nowrap;
-				padding-right: 9%;
-				padding-left:18%;
 				align-self: stretch;
-				justify-content: space-between;
-				align-items: flex-start;
-				margin-top: -165px;
-				& .text-block{
-					margin-top: 200px;
-					& p{
-						max-width: 365px;
-					}
-				}
+				justify-content: flex-start;
+				
+				margin-top: 60px;
 				& .slider{
-					max-width: 538px;
+					max-width: 645px;
+					flex-shrink: 0;
+				}
+				& .gap:nth-of-type(1){
+					flex:0 1 135px;
+				}
+				& .gap:last-of-type{
+					flex: 0 2 457px;
 				}
 			}
-			& .row-9{
-				display: flex;
-				flex-flow: row nowrap;
-				padding-right: 22%;
-				padding-left:0;
-				align-self: stretch;
-				justify-content: space-between;
-				align-items: center;
-				margin-top: -330px;
-				& .text-block{
-					& p{
-						max-width: 365px;
-					}
-				}
-				& .slider{
-					max-width: 560px;
-				}
-			}
+			
 			& .row-10{
 				display: flex;
 				flex-flow: row nowrap;
-				padding-right:0;
-				padding-left:18%;
 				align-self: stretch;
-				justify-content: space-between;
-				align-items: center;
-				margin-top: -300px;
+				justify-content: flex-start;
+				
+				margin-top: 60px;
 				& .text-block{
+					flex-shrink: 1;
 					& p{
-						max-width: 414px;
+						max-width: 300px;
+						& span{
+							font-size: 3*$font-size;
+							line-height: 1;
+							font-family: $contax-sans-regular-stack;
+		  					color: $color-dark;
+		  					margin-bottom: 20px;
+		  					white-space: nowrap;
+						}
 					}
+					
 				}
 				& .slider{
-					max-width: 560px;
+					margin-right: 3vw;
+					max-width: 850px;
+					flex-shrink: 0;
+				}
+				& .gap:nth-of-type(1){
+					flex:0 1 30px;
+				}
+				& .gap:last-of-type{
+					flex: 0 4 60px;
 				}
 			}
 			& .row-11{
 				display: flex;
 				flex-flow: row nowrap;
-				padding-right:0;
-				padding-left:18%;
 				align-self: stretch;
-				justify-content: space-between;
-				align-items: center;
-				margin-top: -300px;
-				& .text-block{
-					& p:first-of-type{
-						color: $color-dark;
-						font-size: 1.2*$font-size;
-						line-height: 1.2$leading;
-						font-family: $contax-sans-regular-stack;
-						margin-bottom: 40px;
-						
-					}
-					& p{
-						max-width: 414px;
-					}
-				}
-			}
-			& .row-12{
-				display: flex;
-				flex-flow: row nowrap;
-				padding-right:0;
-				padding-left:18%;
-				align-self: stretch;
+				justify-content: flex-start;
+				
 				margin-top: 60px;
-				justify-content: space-between;
-				align-items: center;
-				& .text-block{
-					& p{
-						max-width: 650px;
-					}
-				}
-			}
-			& .row-13{
-				display: flex;
-				flex-flow: row nowrap;
-				align-self: stretch;
-				margin-top: 60px;
-				align-items: center;
-				justify-content: center;
 				& .slider{
-					max-width: 771px;
+					max-width: 683px;
+					flex:auto;
 				}
 			}
-			& .row-14{
-				padding-right:0;
-				padding-left:18%;
-				align-self: stretch;
-				margin-top: 60px;
-				& .text-block{
-					& p{
-						padding-left:5px;
-						max-width: 764px;
-					}
-				}
-			}
-			& .row-15{
-				padding-right:0;
-				padding-left:18%;
-				align-self: stretch;
-				margin-top: 60px;
-				& .text-block{
-					& p{
-						& span{
-							padding-right:10px;
-							&:after{
-								content: ".";
-							}
-						}
-						padding-left:5px;
-						max-width: 764px;
-					}
-				}
-			}
+			
 			& p.title{
 				max-width: 784px;
 				color: $color-purpley-grey;

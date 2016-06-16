@@ -9,6 +9,7 @@ header{
       clip: border-box;
       attachment: scroll; 
   	}
+    
     position: relative;
     z-index: 500;
     margin: 0px auto;
@@ -28,7 +29,6 @@ header{
       object-position: 50% 50%;
       width:100%;
       height:100%;
-      opacity: 1;
     }
 }
 .header-wrapper{
@@ -96,7 +96,7 @@ nav{
     width:100%;
     height: 78px;
     background:{
-      color: rgba(213,232,221,0.86);
+      color: $color-duck-egg-blue-t;
     }
   }
 
@@ -109,7 +109,7 @@ nav{
   left: 0px;
   text-align: center;
   z-index: 520;
-  opacity: 1.0;
+  
   background:{
     color: transparent;
   }
@@ -119,10 +119,7 @@ nav{
   
   //height: 100%; when menu comes in
   &.open{
-    opacity: 0.96;
-    background:{
-      color: $color-light-grey;
-    }
+    
   }
 }
 .menu-controls{
@@ -139,6 +136,12 @@ nav{
   }
   cursor: pointer;
   color: $color-dark;
+  &.white{
+    color: $color-white;
+  }
+  &.white:before,&.white:after{
+    background-color: $color-white;
+  }
   font-family: $work-sans-stack;
   font-weight: $semi-bold;
   text-transform: uppercase;
@@ -154,11 +157,12 @@ nav{
     content: ' ';
     height: 3px;
     width: 66px;
-    background-color: #333;
+    background-color: $color-dark;
     transition: transform 200ms ease-out 0ms ,top 80ms ease-in 220ms;
   }
   &.open:before {
     top: 21px;
+    background-color: $color-dark;
     transform: rotate(45deg);
     transition:  top 80ms ease-in 0ms , transform 300ms ease-out 120ms ;
   }
@@ -171,17 +175,19 @@ nav{
     height: 3px;
     width: 66px;
     transition:  transform 300ms ease-out 0ms ,bottom 80ms ease-in 220ms;
-    background-color: #333; 
+    background-color: $color-dark; 
   }
   
   &.open:after {
     bottom: 18px;
+    background-color: $color-dark;
     transform: rotate(-45deg);
     transition:  bottom 80ms ease-in 0ms , transform 300ms ease-out 120ms; 
   }
 }
 .menu-content{
   position:absolute;
+  overflow: scroll;
   display: none;
   padding:{
     top:78px;
@@ -192,52 +198,52 @@ nav{
   width: 100%;
   height: 100vh;
   z-index: 525;
-  display: none;
   transition: all 800ms ;
   background:{
-    color: rgba(213,232,221,1);
+    color: $color-duck-egg-blue;
   }
   &.open{
     display: block;
     background:{
-      color: rgba(213,232,221,0.96);
+      color: $color-duck-egg-blue-t;
     }
   }
 }
 .menu-grid{
   max-width: $wrapper-full-width;
   margin: 0 auto;
-  width: 100%;
+  width: 95%;
   height: 90%;
+  position: relative;
+  top: 0;
   margin-bottom: 78px;
 
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  align-content: space-around;
-  transition: all 800ms ;
-  background:{
-    color: rgba(213,232,221,1);
-  }
-  &.open{
-    display: block;
-    background:{
-      color: rgba(213,232,221,0.96);
-    }
+  align-content: flex-start;
+  transition: all 800ms;
+  &.close{
+    top: -100%;
+    opacity: 0;
   }
   & .menu-item{
-    justify-content: space-between;
-    width:50%;
-    height:$font-size * 4 * 1.15; //centering the text
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    flex-basis: 50%;
+    margin-bottom: 75px;
     text-align: left;
-    
+    align-items: center;
+    &.empty{
+      height: 0;
+    }
     & a:first-child{
 
       font-family: $contax-sans-regular-stack;
-      font-size: $font-size * 4;
+      font-size: $font-size * 3.5;
       color: $color-dark;
-      line-height: 1.15;
-      float:left;
+      line-height: 1;
       text-decoration: none;      
       &:hover{
         color: $color-aqua-blue;
@@ -248,7 +254,7 @@ nav{
         padding: 1px 1px 1px 1px;
         float:left;
         width:22px;
-        height: 100%;
+        height: 50px;
         line-height: 1.15;
         margin-left: 12px;
         text-decoration: none;
@@ -262,6 +268,90 @@ nav{
         &:hover{
           transform: scale(1.2,1.2);
         }
+    }
+  }
+}
+.sub-menu-grid{
+  max-width: $wrapper-full-width;
+  margin: 0 auto;
+  width: 85%;
+  height: 90%;
+  margin-bottom: 78px;
+  display: flex;
+  opacity: 1;
+  transition: opacity 800ms 0ms,display 0ms 0ms;
+  position: relative;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-content: center;
+  &.close{
+    display: none;
+    opacity: 0;
+  }
+  & .root-nav{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    margin-top: 15px;
+    flex-grow: 0;
+    height: 60px;
+    & .back-nav{
+      position: absolute;
+      left: 0px;
+      
+      height: 40px;
+      padding-left : 35px;
+      font-family: $work-sans-stack;
+      font-weight: $medium;
+      font-size: $font-size * 1.5;
+      letter-spacing: 0.4px;
+      background:{
+        image: $sub-menu-arrow-back-image-src;
+        repeat: no-repeat;
+        position: center left;
+        size:contain;
+      }
+      &:hover{
+        transform: scale(1.05,1.05);
+      }
+    }    
+    & .title{
+      line-height: 1;
+      font-family: $contax-sans-regular-stack;
+      font-size: $font-size * 4;
+      color: $color-dark;
+      letter-spacing: 0px;  
+    }    
+  }
+  & .sub-items{
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: center;
+    & div{
+      width:315px;
+      text-align: left;
+      list-style: none;
+      
+      margin-bottom: 12px;
+    }
+    & div.section-title{
+      font-family: $contax-sans-regular-stack;
+      font-size: $font-size * 1;
+      color: $color-turquoise-green;
+
+    }
+    & div a{
+      font-family: $work-sans-stack;
+      font-weight: $light;
+      font-size: $font-size * 1.75;
+      line-height: 1.1;
+      color: $color-dark;
+      & :visited {color: $color-dark;}
     }
   }
 }

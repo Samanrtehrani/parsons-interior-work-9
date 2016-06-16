@@ -218,12 +218,13 @@ section{
 		&> p{
 			position: relative;
 			font-family: $contax-sans-regular-stack ;
-	        font-size: $font-size * 5.5;
-	        color: $color-dark;
-	        line-height: 1;
-	        text-transform: uppercase;
-	        letter-spacing: -0.9px;
-	        text-decoration: none;
+			font-size: $font-size * 5.5;
+			color: $color-dark;
+			line-height: 1;
+			text-transform: uppercase;
+			letter-spacing: -0.9px;
+			text-decoration: none;
+			z-index: 530;
 			margin:{
 				right: $split-gutter-width + $full-column;
 				left: $split-gutter-width + $full-column;
@@ -273,6 +274,7 @@ section{
 				    color: $color-white;
 				    letter-spacing: 0.3px;
 				    height: 100%;
+				    margin-top: 12px;
 				    & a:visited {color: $color-white;}
 				    & a.arrow-right{
 						position: relative;
@@ -301,11 +303,16 @@ section{
 		}
 	}
 }
-
 #page-header{
 	text-align: center;
 	& h1{
 		margin-top: -45px;
+	}
+}
+#page-header.feature{
+	text-align: center;
+	& h1{
+		margin-top: 15px;
 	}
 	& p:first-of-type{
 		position: relative;
@@ -318,9 +325,10 @@ section{
 		border: 4px solid $color-turquoise-green;
 		width: 380px;
 		margin:0 auto;
+		text-transform: uppercase;
 		text-align: center;
 		background-color: $color-white;
-		margin-top: -180px;
+		margin-top: -135px;
 		letter-spacing: 1.1px;
 	}
 	& p:nth-of-type(2){
@@ -330,7 +338,7 @@ section{
 		font-size: $font-size * 1.5;
 		margin:0 auto;
 		text-align: center;
-		margin-top:100px;
+		margin-top:30px;
 	}
 }
 
@@ -338,8 +346,8 @@ section{
 
 	margin:{
 		top: $full-column;
-		right: $full-column;
-		left: $full-column;
+		right: 8%;
+		left: 8%;
 	}
 	border-top:  1px solid rgba(211,210,213,1.0);
 	& .division-title{
@@ -356,13 +364,18 @@ section{
 		display: flex;
 		flex-flow: row wrap;
 		justify-content: space-between;
+
 		& .project{
-			width: 330px;
+			flex-basis: 33.3%;
+			
+			height: 250px;
+			width: 300px;
 			margin:{
 				top: 90px;
 			}
 			text-align: center;
 			&:empty {
+				flex-basis: 33.3%;
 				height: 0;
 				border: none;
 				margin:{
@@ -529,6 +542,12 @@ section{
 		margin-left: 3*$full-column;	
 		width: 335px;
 	}
+
+	& p.student-website a,p.student-email a,p.student-degree{
+		font-size: $font-size * 1.12;
+		line-height: 1.3;
+		font-family: $contax-sans-regular-stack;
+	}
 	& p span{
 		color: $color-turquoise-green;
 		font-size: $font-size * 1.12;
@@ -539,14 +558,15 @@ section{
 	& p:first-of-type{
 		display: inline-block;
 		top: -25px;		
-		padding: 0px 25px 0px 25px;
+		padding: 1px 25px 1px 25px;
 		background:{
 			color: $color-turquoise-green;
 		}
 		color: $color-white;
 		font-size: $font-size * 1.5;
 		line-height: 50px;
-		font-family: $contax-sans-regular-stack;
+		font-family: $work-sans-stack;
+		font-weight: $medium;
 		text-align: center;
 		margin-left: $full-column;	
 		width:auto;
@@ -557,7 +577,8 @@ section{
 		line-height: 1;
 		font-family: $contax-sans-regular-stack;
 		margin-left: $full-column;	
-		width: 550px;
+		width: 100%;
+		margin-bottom: 25px;
 	}
 	
 
@@ -571,7 +592,7 @@ section{
 		& .paragraph:nth-of-type(1){
 			width:7*$full-column;
 			float: left;
-			margin-top: 90px + 15px;
+			margin-top: 80px;
 			& p{
 				padding: 0px 3*$full-column 0px 1*$full-column;
 			}
@@ -622,6 +643,17 @@ section{
 			margin-top: 50px ;
 			& p{
 				padding: 0px 1*$full-column 0px 1*$full-column;
+				&:last-of-type{
+					line-height: 1.25;
+					margin-top: 30px;
+					font-family: $contax-sans-regular-stack;
+				}
+			}
+			& p span{
+				margin-right: 5px;
+				color: $color-turquoise-green;
+				line-height: 1.25;
+				font-family: $contax-sans-regular-stack;
 			}
 		}
 		
@@ -643,6 +675,7 @@ section{
 
 }
 #featured-faculty{
+	overflow:hidden;
 	margin-top:80px;
 	& .main-wrapper{
 		& > p.header-credit{
@@ -666,16 +699,21 @@ section{
 				display: flex;
 				flex-flow: row nowrap;
 				padding-right: 0;
-				padding-left:10%;
+				padding-left:7%;
 				align-self: stretch;
 				justify-content: space-between;
 				align-items: flex-start;
 				& .slider{
 					max-width: 805px;
+					height: 523px;
+
 				}
 				& .text-block{
 					border-top: 2px solid rgb(211,210,213);
 					padding-top: 22px;
+					margin-right: 27px;
+					min-width: 265px;
+
 					& p{
 						& span{
 							font-size: 1.1*$font-size;
@@ -685,34 +723,32 @@ section{
 
 		  					color: $color-turquoise-green;	
 						}
+						& br{
+							line-height: 0;
+						}
 						max-width: 312px;
 					}
 				}
 			}
 			& .row-2{
 				display: flex;
-				flex-flow: row nowrap;
-				padding-right: 10%;
+				flex-flow: row wrap;
 				padding-left:0;
-				align-self: stretch;
-				justify-content: space-between;
+				justify-content: flex-start;
 				align-items: flex-start;
 				margin-top: 60px;
-				& div{
-					display: flex;
-					flex-flow: column nowrap;
-					max-width:809px;
-					& .slider:first-of-type{
-						max-width: 805px;
-						align-self:center;
-					}
-					& .slider:nth-of-type(2){
-						margin-top: 60px;
-						align-self: flex-end;
-						max-width: 657px;
-					}
+				
+				width: 100%;
+				& .slider:first-of-type{
+					max-width: 805px;
+					margin-right: 2vw;
+				}
+				& .slider:nth-of-type(3){
+					margin-top: 60px;
+					max-width: 657px;
 				}
 				& .text-block{
+					height: 615px;
 					& p{
 						max-width: 312px;
 					}
@@ -722,6 +758,7 @@ section{
 				margin-top: 60px;
 			}
 			& .row-4{
+				
 				display: flex;
 				flex-flow: row nowrap;
 				align-self: stretch;
@@ -734,7 +771,7 @@ section{
 					& p{
 						max-width: 277px;
 						& span{
-							font-size: 3*$font-size;
+							font-size: 2.25*$font-size;
 							line-height: 1;
 							font-family: $contax-sans-regular-stack;
 		  					color: $color-dark;
@@ -745,16 +782,19 @@ section{
 				}
 				& .slider{
 					max-width: 645px;
+					height: 824px;
 					flex-shrink: 3;
 				}
 				& .gap:nth-of-type(1){
 					flex:0 5 135px;
+
 				}
 				& .gap:last-of-type{
 					flex: 0 8 250px;
 				}
 			}
 			& .row-6{
+				
 				display: flex;
 				flex-flow: row nowrap;
 				align-self: stretch;
@@ -781,6 +821,7 @@ section{
 				margin-top: 60px;
 				& .slider{
 					max-width: 645px;
+					height: 1031px;
 					flex-shrink: 0;
 				}
 				& .gap:nth-of-type(1){
@@ -821,7 +862,7 @@ section{
 					& p{
 						max-width: 300px;
 						& span{
-							font-size: 3*$font-size;
+							font-size: 2.25*$font-size;
 							line-height: 1;
 							font-family: $contax-sans-regular-stack;
 		  					color: $color-dark;
@@ -834,13 +875,13 @@ section{
 				& .slider{
 					margin-right: 3vw;
 					max-width: 850px;
-					flex-shrink: 0;
+					flex-shrink: 1;
 				}
 				& .gap:nth-of-type(1){
-					flex:0 1 30px;
+					flex:0 5 30px;
 				}
 				& .gap:last-of-type{
-					flex: 0 4 60px;
+					flex: 0 9 60px;
 				}
 			}
 			& .row-11{
@@ -853,6 +894,360 @@ section{
 				& .slider{
 					max-width: 683px;
 					flex:auto;
+				}
+			}
+			
+			& p.title{
+				max-width: 784px;
+				color: $color-purpley-grey;
+				font-size: 1.2*$font-size;
+				line-height: 1.2$leading;
+				font-family: $contax-sans-regular-stack;
+				margin-bottom: 40px;
+				padding-top: 10px;
+				border-top: 2px solid $color-purpley-grey;
+			}
+
+		}
+	}
+}
+#featured-alumna{
+	overflow:hidden;
+	margin-top:80px;
+	& .main-wrapper{
+		& .grid-container{
+			width: 100%;
+			position: relative;
+			margin: 0 auto;
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: flex-start;
+			align-items: center;
+			& .row-1{
+				display: flex;
+				flex-flow: row nowrap;
+			
+				
+				align-self: stretch;
+				justify-content: flex-start;
+				align-items: flex-start;
+				& > .slider{
+					max-width: 518px;
+					
+					flex-shrink: 1;
+				}
+				& > div:nth-of-type(1){
+					flex:0 9 136px;
+				}
+				& > .text-block{
+					border-top: 2px solid rgb(211,210,213);
+					padding-top: 22px;
+					column-count: 2;
+					flex-shrink: 1;
+					margin-right: 4%;
+					& p{
+						max-width: 312px;
+						& span{
+							font-size: 1.1*$font-size;
+							line-height: 1.5;
+							font-family: $contax-sans-regular-stack;
+							letter-spacing: 0.2px;
+		  					color: $color-turquoise-green;	
+						}
+						& br:first-of-type{
+							line-height: 0;
+						}
+						
+					}
+				}
+			}
+			& .row-2{
+				display: flex;
+				flex-flow: row nowrap;
+				align-self: stretch;
+				justify-content: flex-start;
+				
+				margin-top: 60px;
+				& > div:nth-of-type(1){
+					flex:0 5 136px;
+				}
+				& > .text-block{
+					flex-shrink: 1;
+					& p{
+						max-width: 300px;
+						& span{
+							font-size: 2.25*$font-size;
+							line-height: 1;
+							font-family: $contax-sans-regular-stack;
+		  					color: $color-dark;
+		  					margin-bottom: 20px;
+		  					white-space: nowrap;
+						}
+					}
+					
+				}
+				& > .slider{
+					margin-right: 1%;
+					max-width: 876px;
+					flex-shrink: 1;
+				}
+				
+				& > div:last-of-type{
+					flex: 0 9 10px;
+				}
+			}
+			& .row-3{
+				display: flex;
+				flex-flow: row nowrap;
+				align-self: stretch;
+				justify-content: flex-start;
+
+				margin-top: 60px;
+				& > div:nth-of-type(1){
+					flex:0 1 246px;
+				}
+				& > div:nth-of-type(2){
+					max-width: 874px;
+					flex-shrink: 0;
+				}
+				
+				& > div:nth-of-type(3){
+					flex: 0 1 246px;
+				}
+			}
+			&  .row-6, .row-12{
+				margin-top: 60px;
+			}
+			& .row-4{
+				
+				display: flex;
+				flex-flow: row nowrap;
+				align-self: stretch;
+				justify-content: flex-start;
+				
+				margin-top: 60px;
+				& > div:nth-of-type(1){
+					flex:0 1 136px;
+				}
+				& > div:nth-of-type(2){
+					max-width: 494px;
+					flex-shrink: 0;
+					height: 690px;
+					margin-right: 3.5%;
+				}
+				& > div:nth-of-type(3){
+					max-width: 307px;
+					flex-shrink: 0;
+					height: 436px;
+					margin-right: 3.5%;
+				}
+				& > div:nth-of-type(4){
+					max-width: 316px;
+					flex-shrink: 0;
+					height: 436px;
+
+				}
+			}
+			& .row-5{
+				
+				display: flex;
+				flex-flow: row nowrap;
+				align-self: stretch;
+				justify-content: flex-end;
+				align-items: flex-end;
+				margin-top: -190px;
+				
+				& > div:nth-of-type(1){
+					max-width: 626px;
+					flex-shrink: 0;
+					height: 418px;
+					margin-right: 5%;
+				}
+				& > div:nth-of-type(2){
+					max-width: 545px;
+					height: 675px;
+					flex-shrink: 0;
+					margin-right: 2vw;
+
+				}
+				& > div:nth-of-type(3){
+					flex:0 1 136px;
+				}
+			}
+			
+			& .row-7{
+				display: flex;
+				flex-flow: row nowrap;
+				align-self: stretch;
+				justify-content: flex-start;
+				
+				margin-top: 60px;
+				& > div:nth-of-type(1){
+					flex:0 5 136px;
+				}
+				& > .text-block{
+					flex-shrink: 1;
+					& p{
+						max-width: 312px;
+						& span{
+							font-size: 2.25*$font-size;
+							line-height: 1;
+							font-family: $contax-sans-regular-stack;
+		  					color: $color-dark;
+		  					margin-bottom: 20px;
+		  					white-space: nowrap;
+						}
+					}
+					
+				}
+				& > .slider{
+					margin-right: 8%;
+					max-width: 650px;
+					flex-shrink: 1;
+				}
+				
+				& > div:last-of-type{
+					flex: 0 5 136px;
+				}
+			}
+			& .row-8{
+				display: flex;
+				flex-flow: row nowrap;
+				align-self: stretch;
+				justify-content: flex-end;
+
+				margin-top: 60px;
+				& > div:nth-of-type(1){
+					flex:0 10 240px;
+				}
+				& > .slider{
+					max-width: 1120px;
+					flex-shrink: 1;
+				}
+			}
+			& .row-9{
+				display: flex;
+				flex-flow: row wrap;
+				align-self: stretch;
+				justify-content: flex-start;
+				
+				margin-top: 60px;
+				& > div:nth-of-type(1){
+					flex:0 5 136px;
+				}
+				& > .text-block{
+					flex-shrink: 1;
+					margin-right: 9%;
+					& p{
+						max-width: 300px;
+						& span{
+							font-size: 2.25*$font-size;
+							line-height: 1;
+							font-family: $contax-sans-regular-stack;
+		  					color: $color-dark;
+		  					margin-bottom: 20px;
+		  					white-space: nowrap;
+						}
+					}
+					
+				}
+				
+				& > div:nth-of-type(3){
+					height: 320px;
+					max-width: 650px;
+					flex-shrink: 1;
+					& > *{
+						height: auto;
+					}
+				}
+				& > div:nth-of-type(4){
+					flex: 0 5 136px;
+				}
+				& > div:nth-of-type(5){
+					height: 660px;
+					max-width: 522px;
+					flex-shrink: 1;
+				}
+			}
+			& .row-10{
+				display: flex;
+				flex-flow: row nowrap;
+				align-self: stretch;
+				justify-content: flex-start;
+
+				margin-top: 60px;
+				& > div:nth-of-type(1){
+					flex:0 1 136px;
+				}
+				& > div:nth-of-type(2){
+					max-width: 1094px;
+					flex-shrink: 0;
+				}
+				
+				& > div:nth-of-type(3){
+					flex: 0 1 136px;
+				}
+			}
+			& .row-11{
+				
+				display: flex;
+				flex-flow: row nowrap;
+				align-self: stretch;
+				justify-content: space-between;
+				
+				margin-top: 60px;
+				
+				& > div:nth-of-type(1){
+					max-width: 404px;
+					flex-shrink: 1;
+				}
+				& > div:nth-of-type(2){
+					max-width: 426px;
+					flex-shrink: 1;
+
+				}
+				& > div:nth-of-type(3){
+					max-width: 416px;
+					flex-shrink: 2;
+
+				}
+			}
+			& .row-12{
+				display: flex;
+				flex-flow: row nowrap;
+				align-self: stretch;
+				justify-content: flex-start;
+
+				margin-top: 60px;
+				& > div:nth-of-type(1){
+					flex:0 1 136px;
+				}
+				& > div:nth-of-type(2){
+					max-width: 873px;
+					flex-shrink: 0;
+				}
+				
+				& > div:nth-of-type(3){
+					flex: 0 1 359px;
+				}
+			}
+			& .row-13{
+				display: flex;
+				flex-flow: row nowrap;
+				align-self: stretch;
+				justify-content: flex-start;
+
+				margin-top: 60px;
+				& > div:nth-of-type(1){
+					flex:0 1 468px;
+				}
+				& > div:nth-of-type(2){
+					max-width: 762px;
+					flex-shrink: 0;
+				}
+				
+				& > div:nth-of-type(3){
+					flex: 0 1 136px;
 				}
 			}
 			
@@ -1183,11 +1578,11 @@ section{
 		position: relative;
 		display: flex;
 		flex-flow: row wrap;
+		margin: 0 8%;
 		justify-content: space-between;
 		& .issue{
-			flex-basis: 30%;
+			flex-basis: 33.3%;
 			height: 418px;
-			width: 212px;
 			margin: 40px auto 80px auto;
 			& .cover-image{
 				width: 210px;
@@ -1265,7 +1660,7 @@ section{
 						flex-flow: column nowrap;
 						justify-content: flex-start;
 						position: relative;
-						top: -40px;
+						top: -60px;
 						background-color: $color-turquoise-green;
 						padding: 9px 30px 9px 30px;
 						& label{
@@ -1324,9 +1719,8 @@ section{
 	margin-bottom:80px;
 	& .credit{
 		margin: 0 auto;
-		white-space: nowrap;
 
-		& p:nth-of-type(3){
+		& div:nth-of-type(3){
 
 			width: 100%;
 			margin:20px auto 0px auto;
@@ -1337,7 +1731,7 @@ section{
 			text-align: center;
 			text-transform: capitalize;
 		}
-		& p:nth-of-type(2){
+		& div:nth-of-type(2){
 			width:100%;
 			
 			color: $color-purpley-grey;
@@ -1348,7 +1742,7 @@ section{
 			text-align: center;
 			text-transform: uppercase;
 		}
-		& p:nth-of-type(1){
+		& div:nth-of-type(1){
 			margin: 0 auto;
 			margin:40px auto 0px auto;
 			width: 2*$full-column;

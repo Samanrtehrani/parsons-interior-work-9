@@ -7,8 +7,7 @@ footer{
 }
 .footer-nav{
 	display: flex;
-	flex-direction: row;
-	resize: horizontal;
+	flex-flow: row nowrap;
 	border:{
 		top: 1px solid rgba(211,212,213,1.0);
 	}
@@ -23,6 +22,7 @@ footer{
 	& .footer-section{
 		position: relative;
 		resize: horizontal;
+		text-align: center;
 		width : 100/3%;
 		height:100%;
 		font-family: $work-sans-stack;

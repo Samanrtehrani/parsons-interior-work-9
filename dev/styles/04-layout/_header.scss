@@ -122,6 +122,7 @@ nav{
     
   }
 }
+
 .menu-controls{
   line-height: 42px;
   font-size: 1.2rem;
@@ -131,6 +132,7 @@ nav{
   margin: 15px auto 15px auto;
   width: 66px;
   height: 42px;
+
   background:{
     color: transparent;
   }
@@ -138,14 +140,26 @@ nav{
   color: $color-dark;
   &.white{
     color: $color-white;
+    transition: none;
   }
+  &.black{
+    color: $color-dark;
+    transition: none;
+    &:before{
+      background-color: $color-dark;
+    }
+    &:after{
+      background-color: $color-dark;
+    }
+  }
+    
   &.white:before,&.white:after{
     background-color: $color-white;
   }
   font-family: $work-sans-stack;
   font-weight: $semi-bold;
   text-transform: uppercase;
-  transition: all 70ms ease-in 300ms;
+  transition: all 70ms ease-in 300ms,color 0ms 0ms;
   &.open{
     color: rgba(0,0,0,0);
     transition: all 70ms ease-in 10ms;

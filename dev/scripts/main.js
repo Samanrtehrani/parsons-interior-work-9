@@ -24,7 +24,9 @@ window.onload = function () {
     var facultyNavigation = document.querySelector('#sticky-navigation');
     var stickyNavigation,navOffsetTop,menuHeight;
 
-    var menuButton = document.getElementsByClassName('menu-controls')[0];
+    var menuButton = document.querySelector('.menu-panel .menu-controls');
+    var header = document.querySelector('header');
+
 
     menuButton.addEventListener('click', function(event){
         toggleMenu(event);}, false);
@@ -44,6 +46,28 @@ window.onload = function () {
             if (!ticking) {
                 window.requestAnimationFrame(function() {
                     checkStickyNav(last_known_scroll_position);
+                    ticking = false;
+                });
+            }
+            ticking = true;
+        });
+    }else{
+        window.addEventListener('scroll', function() {
+            last_known_scroll_position = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    if( last_known_scroll_position > header.offsetHeight -30){
+                        if( !menuButton.classList.contains('black') ){
+                            menuButton.classList.remove('white'); 
+                            menuButton.classList.add('black'); 
+                        }
+                    }else{
+                        if( !menuButton.classList.contains('white') ){
+                            menuButton.classList.add('white'); 
+                            menuButton.classList.remove('black'); 
+                        }
+                    }
+                    
                     ticking = false;
                 });
             }

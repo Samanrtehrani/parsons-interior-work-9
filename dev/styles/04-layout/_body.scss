@@ -468,7 +468,7 @@ section{
 				top: 2px solid rgba(255,255,255,1);
 			}
 			background:{
-				color: rgba(213,232,221,0.86);
+				color: $color-duck-egg-blue-t;
 			}
 		}
 		&>ul{
@@ -1030,22 +1030,29 @@ section{
 					flex:0 1 136px;
 				}
 				& > div:nth-of-type(2){
-					max-width: 494px;
+					flex: 0 1 494px;
 					flex-shrink: 0;
 					height: 690px;
 					margin-right: 3.5%;
 				}
 				& > div:nth-of-type(3){
-					max-width: 307px;
+					
+					flex: 0 1 307px;
 					flex-shrink: 0;
 					height: 436px;
 					margin-right: 3.5%;
 				}
 				& > div:nth-of-type(4){
-					max-width: 316px;
+					display: none;
+				}
+				& > div:nth-of-type(5){
+					flex: 0 1 316px;
 					flex-shrink: 0;
 					height: 436px;
 
+				}
+				& > div:nth-of-type(6){
+					display: none;
 				}
 			}
 			& .row-5{
@@ -1067,7 +1074,6 @@ section{
 					max-width: 545px;
 					height: 675px;
 					flex-shrink: 0;
-					margin-right: 2vw;
 
 				}
 				& > div:nth-of-type(3){
@@ -1083,7 +1089,7 @@ section{
 				
 				margin-top: 60px;
 				& > div:nth-of-type(1){
-					flex:0 5 136px;
+					flex:0 12 136px;
 				}
 				& > .text-block{
 					flex-shrink: 1;
@@ -1122,7 +1128,7 @@ section{
 				}
 				& > .slider{
 					max-width: 1120px;
-					flex-shrink: 1;
+					flex-shrink: 0;
 				}
 			}
 			& .row-9{
@@ -1136,7 +1142,7 @@ section{
 					flex:0 5 136px;
 				}
 				& > .text-block{
-					flex-shrink: 1;
+					flex-shrink: 0;
 					margin-right: 9%;
 					& p{
 						max-width: 300px;
@@ -1155,18 +1161,15 @@ section{
 				& > div:nth-of-type(3){
 					height: 320px;
 					max-width: 650px;
-					flex-shrink: 1;
+					flex-shrink: 0;
 					& > *{
 						height: auto;
 					}
 				}
-				& > div:nth-of-type(4){
-					flex: 0 5 136px;
-				}
 				& > div:nth-of-type(5){
 					height: 660px;
 					max-width: 522px;
-					flex-shrink: 1;
+					flex-shrink: 0;
 				}
 			}
 			& .row-10{
@@ -1177,7 +1180,7 @@ section{
 
 				margin-top: 60px;
 				& > div:nth-of-type(1){
-					flex:0 1 136px;
+					flex:0 15 136px;
 				}
 				& > div:nth-of-type(2){
 					max-width: 1094px;
@@ -1185,7 +1188,7 @@ section{
 				}
 				
 				& > div:nth-of-type(3){
-					flex: 0 1 136px;
+					flex: 0 15 136px;
 				}
 			}
 			& .row-11{
@@ -1198,17 +1201,17 @@ section{
 				margin-top: 60px;
 				
 				& > div:nth-of-type(1){
-					max-width: 404px;
+					max-width: 31%;
 					flex-shrink: 1;
 				}
 				& > div:nth-of-type(2){
-					max-width: 426px;
+					max-width: 31%;
 					flex-shrink: 1;
 
 				}
 				& > div:nth-of-type(3){
-					max-width: 416px;
-					flex-shrink: 2;
+					max-width: 31%;
+					flex-shrink: 1;
 
 				}
 			}
@@ -1247,7 +1250,7 @@ section{
 				}
 				
 				& > div:nth-of-type(3){
-					flex: 0 1 136px;
+					flex: 0 2 136px;
 				}
 			}
 			

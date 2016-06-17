@@ -354,3 +354,375 @@ header{
    }
 }
 
+#featured-alumna .main-wrapper .grid-container .row-1 {
+   @media all and ( max-width : 1130px ){
+      flex-flow: column nowrap;
+   }
+   
+   & > .gap{
+      @media all and ( max-width : 1130px ){
+         display: none;
+      }
+   }
+   & .slider {
+      @media all and ( max-width : 1130px ){
+            
+            margin-top: 60px;
+            align-self:flex-end;
+            max-width: 49%;
+            height: 472px;
+      }
+      @media all and ( max-width : 650px ){
+            align-self:center;
+            max-width: 100%;
+   }
+   }
+
+   & .text-block {
+      @media all and ( max-width : 1130px ){
+            margin: 0 auto;
+      }
+      @media all and ( max-width : 650px ){
+            column-count: 1;
+            max-width: 90%;
+      }
+      
+   }
+}
+
+
+#featured-alumna .main-wrapper .grid-container .row-2 {
+   @media all and ( max-width : 1130px ){
+      flex-flow: row wrap;
+      margin-top: -480px;
+   }
+   @media all and ( max-width : 650px ){
+      flex-flow: column nowrap;
+      margin-top: 60px;
+      align-items: center;
+   }
+   & > .gap{
+      @media all and ( max-width : 1130px ){
+         display: none;
+      }
+   }
+   & > .slider{
+      @media all and ( max-width : 1130px ){
+         order:2;
+         margin: 0 auto;
+         max-width: 100%;
+
+         flex-shrink: 0;
+      }
+      @media all and ( max-width : 650px ){
+         margin-top: 60px;
+      }
+   }
+   & .text-block {
+      @media all and ( max-width : 1130px ){
+            order:1;
+            max-width: 50%;
+            height: 550px;
+            margin-left: calc((100% - 640px)/2);
+            
+      }
+      @media all and ( max-width : 650px ){
+         height: auto;
+         max-width: 90%;
+         margin: 0px auto 0 auto;
+      }
+      
+   }
+}
+#featured-alumna .main-wrapper .grid-container .row-4 {
+   @media all and ( max-width : 1080px ){
+      flex-flow: row wrap;
+      justify-content: flex-end;
+      padding: 0px calc((100% - 875px)/2);
+   }
+   @media all and ( max-width : 650px ){
+      flex-flow: column nowrap;
+      align-items: center;
+   }
+   & > div:nth-of-type(1){
+      @media all and ( max-width : 1080px ){
+         display: none;
+      }
+   }
+   & > div:nth-of-type(2){
+      @media all and ( max-width : 1080px ){
+         margin-right: 0;
+      }
+      @media all and ( max-width : 876px ){
+         flex : 0 1 54%;
+      }
+      @media all and ( max-width : 650px ){
+         max-width: 100%;
+         margin: 0 auto 0 auto;
+      }
+   }
+   & div:nth-of-type(3){
+      @media all and ( max-width : 1080px ){
+         
+         margin-left: calc(100% - 494px - 307px);
+         margin-right:0;
+      }
+      @media all and ( max-width : 876px ){
+           margin-left: 7%;
+           flex : 0 1 39%;
+      }
+      @media all and ( max-width : 650px ){
+         max-width: 100%;
+         margin: 60px auto 0 auto;
+      }
+   }
+   & div:nth-of-type(4){
+      @media all and ( max-width : 1080px ){
+         display: none;
+         
+      }
+   }
+   & div:nth-of-type(5){
+      @media all and ( max-width : 1080px ){
+            margin-top: -200px;
+      }
+      @media all and ( max-width : 876px ){
+           flex : 0 1 39%;
+      }
+      @media all and ( max-width : 650px ){
+         max-width: 100%;
+         margin: 60px auto 0 auto;
+      }
+   }
+   & div:nth-of-type(6){
+      @media all and ( max-width : 1080px ){
+         display: flex;
+         width: calc((100% - 875px)/2);
+      }
+   }
+}
+#featured-alumna .main-wrapper .grid-container .row-5 {
+   @media all and ( max-width : 1080px ){
+      flex-flow: column nowrap;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 0px calc((100% - 875px)/2);
+   }
+   @media all and ( max-width : 650px ){
+      flex-flow: column nowrap;
+      align-items: center;
+      margin-top: 60px;
+   }
+   & > div:nth-of-type(1){
+      @media all and ( max-width : 1080px ){
+         margin-right:0;
+         max-width: 494px;
+      }
+      @media all and ( max-width : 876px ){
+         max-width: 54%;
+      }
+      @media all and ( max-width : 650px ){
+         max-width: 100%;
+         margin: 0 auto;
+      }
+   }
+   & > div:nth-of-type(2){
+      @media all and ( max-width : 1080px ){
+         margin-top: 60px;  
+         align-self:center;
+      }
+      @media all and ( max-width : 650px ){
+         max-width: 100%;
+
+      }
+   }
+   & div:nth-of-type(3){
+      @media all and ( max-width : 1080px ){
+         display: none;
+      }
+
+   }
+}
+#featured-alumna .main-wrapper .grid-container .row-7{
+   @media all and ( max-width : 1190px ){
+      
+   }
+   @media all and ( max-width : 650px ){
+      flex-flow: column nowrap;
+      align-items: center;
+   }
+   & > div:nth-of-type(1){
+      @media all and ( max-width : 1190px ){
+         display: none;
+      }
+   }
+   & > div:nth-of-type(2){
+      @media all and ( max-width : 1190px ){
+         max-width: 54%;
+         margin-right: 5%;
+      }
+      @media all and ( max-width : 650px ){
+         order: 2;
+         max-width: 100%;
+         margin: 60px auto 0 auto;
+      }
+      
+   }
+   & div:nth-of-type(3){
+      @media all and ( max-width : 1190px ){
+         max-width: 33%;
+      }
+      @media all and ( max-width : 650px ){
+         max-width: 90%;
+         order: 1;
+      }
+
+   }
+   & div:nth-of-type(4){
+      @media all and ( max-width : 1190px ){
+         display: none;
+      }
+
+   }
+
+}
+#featured-alumna .main-wrapper .grid-container .row-9{
+   @media all and ( max-width : 1195px ){
+      
+   }
+   @media all and ( max-width : 650px ){
+      flex-flow: column nowrap;
+      margin-top: 60px;
+      align-items: center;
+   }
+   & > div:nth-of-type(1){
+      @media all and ( max-width : 1195px ){
+         display: none;
+      }
+   }
+   & > div:nth-of-type(2){
+      @media all and ( max-width : 1195px ){
+         order: 2;
+         margin-right: 0px;
+         max-width: 33%;
+      }
+      @media all and ( max-width : 650px ){
+         order: 1;
+         max-width: 90%;
+         margin: 0 auto 0 auto;
+      }
+      
+   }
+   & div:nth-of-type(3){
+      @media all and ( max-width : 1195px ){
+         order: 3;
+         height: auto;
+         margin: 60px auto 0 auto;
+      }
+      @media all and ( max-width : 650px ){
+         order: 3;
+         max-width: 100%;
+         margin: 60px auto 0 auto;
+      }
+
+   }
+   & div:nth-of-type(4){
+      @media all and ( max-width : 1195px ){
+         display: none;
+      }
+
+   }
+   & div:nth-of-type(5){
+      @media all and ( max-width : 1195px ){
+         order:1;
+         margin-right: 5%;
+         max-width: 54%;
+      }
+      @media all and ( max-width : 650px ){
+         order: 2;
+         max-width: 100%;
+         margin: 60px auto 0 auto;
+      }
+
+   }
+
+}
+#featured-alumna .main-wrapper .grid-container .row-10{
+   @media all and ( max-width : 1095px ){
+      
+   }
+   & > div:nth-of-type(1){
+      @media all and ( max-width : 1095px ){
+         display: none;
+      }
+   }
+   & > div:nth-of-type(2){
+      @media all and ( max-width : 1095px ){
+      }
+      
+   }
+   & div:nth-of-type(3){
+      @media all and ( max-width : 1095px ){
+         display: none;
+      }
+
+   }
+   
+
+}
+#featured-alumna .main-wrapper .grid-container .row-11{
+   
+   @media all and ( max-width : 650px ){
+      flex-flow: column nowrap;
+      margin-top: 60px;
+      align-items: center;
+   }
+   & > div:nth-of-type(1){
+      @media all and ( max-width : 650px ){
+         margin: 0 auto;
+         max-width: 80%;
+      }
+      @media all and ( max-width : 320px ){
+         max-width: 260px;
+      }
+   }
+   & > div:nth-of-type(2){
+     
+      @media all and ( max-width : 650px ){
+         margin: 60px auto 0 auto;
+         max-width: 80%;
+      }
+
+      @media all and ( max-width : 320px ){
+         max-width: 260px;
+      }
+   }
+   & div:nth-of-type(3){
+      
+      @media all and ( max-width : 650px ){
+         margin: 60px auto 0 auto;
+         max-width: 80%;
+      }
+      @media all and ( max-width : 320px ){
+         max-width: 260px;
+      }
+
+   }
+
+}
+#featured-alumna .main-wrapper .grid-container .row-13{
+
+   
+   & > div:nth-of-type(2){
+      @media all and ( max-width : 850px ){
+         max-width:90%;
+      }
+      @media all and ( max-width : 650px ){
+         max-width: 100%;
+      }
+      
+   }
+   
+   
+
+}

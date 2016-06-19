@@ -305,14 +305,14 @@ header{
 #featured-faculty .main-wrapper .grid-container .row-7{
    @media all and ( max-width : 768px ){
    }
-   & .slider {
+   & > .slider {
       @media all and ( max-width : 768px ){
          height: auto;
          max-width: none;
          width: 100%;
       }
    }
-   & .gap {
+   & > .gap {
       @media all and ( max-width : 768px ){
          display: none;
       }
@@ -324,24 +324,24 @@ header{
       flex-flow: column nowrap;
       padding-left: 0px;
    }
-   & .slider {
+   & > .slider {
       @media all and ( max-width : 768px ){
          max-width: none;
          height: auto;
          width: 100%;  
       }
    }
-   & .gap:nth-of-type(1) {
+   & > .gap:nth-of-type(1) {
       @media all and ( max-width : 768px ){
          display: none;
       }
    }
-   & .gap:last-of-type {
+   &  > .gap:last-of-type {
       @media all and ( max-width : 768px ){
          display: none;
       }
    }
-   & .text-block {
+   & > .text-block {
       @media all and ( max-width : 768px ){    
          margin: 60px auto 0px auto;
       }
@@ -364,7 +364,7 @@ header{
          display: none;
       }
    }
-   & .slider {
+   & > .slider {
       @media all and ( max-width : 1130px ){
             
             margin-top: 60px;
@@ -378,7 +378,7 @@ header{
    }
    }
 
-   & .text-block {
+   & > .text-block {
       @media all and ( max-width : 1130px ){
             margin: 0 auto;
       }
@@ -418,7 +418,7 @@ header{
          margin-top: 60px;
       }
    }
-   & .text-block {
+   & > .text-block {
       @media all and ( max-width : 1130px ){
             order:1;
             max-width: 50%;
@@ -461,7 +461,7 @@ header{
          margin: 0 auto 0 auto;
       }
    }
-   & div:nth-of-type(3){
+   & > div:nth-of-type(3){
       @media all and ( max-width : 1080px ){
          
          margin-left: calc(100% - 494px - 307px);
@@ -476,13 +476,13 @@ header{
          margin: 60px auto 0 auto;
       }
    }
-   & div:nth-of-type(4){
+   & > div:nth-of-type(4){
       @media all and ( max-width : 1080px ){
          display: none;
          
       }
    }
-   & div:nth-of-type(5){
+   & > div:nth-of-type(5){
       @media all and ( max-width : 1080px ){
             margin-top: -200px;
       }
@@ -494,7 +494,7 @@ header{
          margin: 60px auto 0 auto;
       }
    }
-   & div:nth-of-type(6){
+   & > div:nth-of-type(6){
       @media all and ( max-width : 1080px ){
          display: flex;
          width: calc((100% - 875px)/2);
@@ -536,7 +536,7 @@ header{
 
       }
    }
-   & div:nth-of-type(3){
+   & > div:nth-of-type(3){
       @media all and ( max-width : 1080px ){
          display: none;
       }
@@ -568,7 +568,7 @@ header{
       }
       
    }
-   & div:nth-of-type(3){
+   & > div:nth-of-type(3){
       @media all and ( max-width : 1190px ){
          max-width: 33%;
       }
@@ -578,7 +578,7 @@ header{
       }
 
    }
-   & div:nth-of-type(4){
+   & > div:nth-of-type(4){
       @media all and ( max-width : 1190px ){
          display: none;
       }
@@ -613,7 +613,7 @@ header{
       }
       
    }
-   & div:nth-of-type(3){
+   & > div:nth-of-type(3){
       @media all and ( max-width : 1195px ){
          order: 3;
          height: auto;
@@ -626,13 +626,13 @@ header{
       }
 
    }
-   & div:nth-of-type(4){
+   & > div:nth-of-type(4){
       @media all and ( max-width : 1195px ){
          display: none;
       }
 
    }
-   & div:nth-of-type(5){
+   & > div:nth-of-type(5){
       @media all and ( max-width : 1195px ){
          order:1;
          margin-right: 5%;
@@ -661,7 +661,7 @@ header{
       }
       
    }
-   & div:nth-of-type(3){
+   & > div:nth-of-type(3){
       @media all and ( max-width : 1095px ){
          display: none;
       }
@@ -697,7 +697,7 @@ header{
          max-width: 260px;
       }
    }
-   & div:nth-of-type(3){
+   & > div:nth-of-type(3){
       
       @media all and ( max-width : 650px ){
          margin: 60px auto 0 auto;

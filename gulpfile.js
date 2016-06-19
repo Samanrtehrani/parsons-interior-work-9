@@ -138,7 +138,7 @@ gulp.task('compileCSSForDev', function () {
 gulp.task('compileCSSForProd', function () {
     return gulp.src(sassMainFile)
         .pipe(sass({
-            outputStyle: 'expanded',
+            outputStyle: 'compressed',
             precision: 10
         }).on('error', sass.logError))
         .pipe(browserSpecificPrefixGenerator({

@@ -52,27 +52,30 @@ window.onload = function () {
             ticking = true;
         });
     }else{
-        window.addEventListener('scroll', function() {
-            last_known_scroll_position = window.scrollY;
-            if (!ticking) {
-                window.requestAnimationFrame(function() {
-                    if( last_known_scroll_position > header.offsetHeight -30){
-                        if( !menuButton.classList.contains('black') ){
-                            menuButton.classList.remove('white'); 
-                            menuButton.classList.add('black'); 
+        var menuButtonWhite = document.querySelector('.menu-panel .menu-controls.white');
+        if( menuButtonWhite ){
+            window.addEventListener('scroll', function() {
+                last_known_scroll_position = window.scrollY;
+                if (!ticking) {
+                    window.requestAnimationFrame(function() {
+                        if( last_known_scroll_position > header.offsetHeight -30){
+                            if( !menuButtonWhite.classList.contains('black') ){
+                                menuButtonWhite.classList.remove('white'); 
+                                menuButtonWhite.classList.add('black'); 
+                            }
+                        }else{
+                            if( !menuButtonWhite.classList.contains('white') ){
+                                menuButtonWhite.classList.add('white'); 
+                                menuButtonWhite.classList.remove('black'); 
+                            }
                         }
-                    }else{
-                        if( !menuButton.classList.contains('white') ){
-                            menuButton.classList.add('white'); 
-                            menuButton.classList.remove('black'); 
-                        }
-                    }
-                    
-                    ticking = false;
-                });
-            }
-            ticking = true;
-        });
+                        
+                        ticking = false;
+                    });
+                }
+                ticking = true;
+            });
+        }
     }
 
     function checkStickyNav(scroll_pos){

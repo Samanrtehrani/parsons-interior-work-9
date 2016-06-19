@@ -241,7 +241,7 @@ section{
 			right: $full-column + $split-gutter-width;
 			bottom:0px;
 			width: 650px;
-			height: 245px;
+			height: auto;
 			background:{
 				color: $color-turquoise-green;
 			}
@@ -1030,14 +1030,14 @@ section{
 					flex:0 1 136px;
 				}
 				& > div:nth-of-type(2){
-					flex: 0 1 494px;
+					flex: 0 0 494px;
 					flex-shrink: 0;
 					height: 690px;
 					margin-right: 3.5%;
 				}
 				& > div:nth-of-type(3){
-					
-					flex: 0 1 307px;
+
+					flex: 0 0 307px;
 					flex-shrink: 0;
 					height: 436px;
 					margin-right: 3.5%;
@@ -1046,7 +1046,7 @@ section{
 					display: none;
 				}
 				& > div:nth-of-type(5){
-					flex: 0 1 316px;
+					flex: 0 0 316px;
 					flex-shrink: 0;
 					height: 436px;
 

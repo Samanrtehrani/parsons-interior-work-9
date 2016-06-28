@@ -71,7 +71,7 @@ header{
 #page-header.feature p:first-of-type{
    @media all and ( max-width: 520px ){
       margin-top: -40px;
-      width: 74%;
+      max-width: 85%;
    }
 }
 .header-wrapper .header-container .header-panel .school-name{
@@ -899,6 +899,54 @@ header{
       @media all and ( max-width : 780px ){
          margin: 60px auto 0px auto;
          max-width: 580px;
+      }
+   }
+}
+
+#faculty-directory{
+   & .division{
+      @media all and ( max-width : 630px ){
+         margin-right: 53px;
+         margin-top: 60px;
+      }
+      & .faculty{
+         @media all and ( max-width : 630px ){
+            flex-basis: 100%;
+         }
+      }
+   }
+}
+#sticky-navigation{
+   @media all and ( max-width : 630px ){
+      width: 100%;
+      display: flex;
+      top: 45px;
+      height: 1px;
+      margin-bottom: 0px;
+   }
+   & .navigation{
+      @media all and ( max-width : 630px ){
+         align-items: flex-start;
+         height: 1px;
+         justify-content: flex-end;
+         transition: none;
+      }
+      &.sticked{
+         @media all and ( max-width : 630px ){
+            border:none;
+            background-color: transparent;
+         }
+      }
+      & > ul{
+         @media all and ( max-width : 630px ){
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: flex-start;
+            width: 53px;
+         }
+         &>li{ 
+            height: 32px;
+         }
       }
    }
 }

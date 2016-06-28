@@ -21,6 +21,7 @@ window.onload = function () {
     if( useGrid ){
         gridHandler();
     }
+
     var facultyNavigation = document.querySelector('#sticky-navigation');
     var stickyNavigation,navOffsetTop,menuHeight;
 
@@ -40,9 +41,11 @@ window.onload = function () {
         menuHeight = 79 ;
         var last_known_scroll_position = 0;
         var ticking = false;
-
+        console.log(last_known_scroll_position);
         window.addEventListener('scroll', function() {
+            console.log(last_known_scroll_position);
             last_known_scroll_position = window.scrollY;
+            console.log(last_known_scroll_position);
             if (!ticking) {
                 window.requestAnimationFrame(function() {
                     checkStickyNav(last_known_scroll_position);
@@ -79,6 +82,7 @@ window.onload = function () {
     }
 
     function checkStickyNav(scroll_pos){
+        navOffsetTop = facultyNavigation.offsetTop;
         if( (scroll_pos + menuHeight ) >= navOffsetTop ){
             if( !stickyNavigation.classList.contains('sticked') ){
                 stickyNavigation.classList.add('sticked');   
@@ -221,7 +225,3 @@ function gridHandler(){
 /** END
 * GRID HANDLER SECTION 
 */
-
-
-
-

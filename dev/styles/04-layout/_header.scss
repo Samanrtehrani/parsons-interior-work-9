@@ -225,12 +225,11 @@ nav{
 }
 .menu-grid{
   max-width: $wrapper-full-width;
-  margin: 0 auto;
+  margin: 40px auto 78px auto;
   width: 95%;
   height: 90%;
   position: relative;
   top: 0;
-  margin-bottom: 78px;
 
   display: flex;
   flex-flow: row wrap;
@@ -309,7 +308,7 @@ nav{
     justify-content: center;
     align-items: center;
     margin-bottom: 50px;
-    margin-top: 15px;
+    margin-top: 40px;
     flex-grow: 0;
     height: 60px;
     & .back-nav{

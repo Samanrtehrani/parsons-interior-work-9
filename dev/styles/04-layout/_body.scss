@@ -22,10 +22,11 @@ section{
 	position: relative;
 	z-index: 300;
 	&#page-header{
-		z-index: 505;	
+		z-index: 505;
 	}
-	&#project-information{
-		z-index: 500;	
+	&#project-header{
+		z-index: 500;
+		margin-bottom: 0px;
 	}
 	margin-bottom: 40px;
 	&:last-of-type{
@@ -34,190 +35,277 @@ section{
 }
 
 #dean-letter-section{
-	& .main-wrapper{
+	& > .main-wrapper{
+		overflow-x: hidden;
 		padding:{
 			top: 100px;
 		}
 		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		.section-header{
+		flex-flow: row nowrap;
+		justify-content: center;
+		& > div:nth-of-type(1){
+			flex: 0 6 125px;
+		}
+		& > div:nth-of-type(3){
+			flex: 0 6 212px;
+		}
+		& > div:nth-of-type(5){
+			flex: 0 5 137px;
+		}
+		& > .section-header{
 			position: relative;
-			margin:{
-				left: $full-column + $split-gutter-width;
-			}
-			& p:first-child{
+			flex: 0 0 255px;
+			& > p:first-child{
 				color: $color-turquoise-green;
 				font-family: $work-sans-stack;
 				font-weight: 400;
-		        font-size: $font-size * 2;
-		        line-height: 1;
-		        letter-spacing: 0.2px;
-		        text-decoration: none; 
+				font-size: $font-size * 2;
+				line-height: 1;
+				letter-spacing: 0.2px;
+				text-decoration: none;
 			}
-			& p:not(:first-child):last-child{
+			& > p:nth-of-type(2){
 				font-family: $contax-sans-regular-stack ;
-		        font-size: $font-size * 5.5;
-		        color: $color-dark;
-		        line-height: 1;
-		        letter-spacing: 0.9px;
-		        text-decoration: none; 
+				font-size: $font-size * 5.5;
+				color: $color-dark;
+				line-height: 1;
+				margin-top: 13px;
+				letter-spacing: 0.9px;
+				margin-left: -6px;
+				text-decoration: none;
+			}
+			& > p:nth-of-type(3){
+				font-family: $work-sans-stack ;
+				font-size: $font-size * 1.37;
+				color: $color-brownish-grey;
+				line-height: 1.6;
+				letter-spacing: 2.4px;
+				text-decoration: none;
+				text-transform: uppercase;
 			}
 		}
-		.section-content{
+		& > .section-content{
 			position: relative;
 			display: flex;
-			flex-direction: column;
+			flex-flow: column nowrap;
+			align-items: center;
 			justify-content: flex-start;
-			width: 6 * $full-column;
-			margin:{
-				right: $full-column;
-			}
-			
+			max-width: 6 * $full-column;
+			flex-shrink: 1;
 			& .content-row{
 				display: flex;
 				flex-direction: row;
 				justify-content: flex-start;
 				margin-bottom: 50px;
+				&.close.extra{
+					display: none;
+				}
+				&.extra{
+					margin-bottom: 20px;
+					margin-top: 30px;
+					overflow: hidden;
+				}
+				&.more{
+					margin-bottom: 0px;
+				}
 				& .content-column{
 					position: relative;
-					width: 50%; 
-					margin-right: $split-gutter-width;
+					width: 50%;
+					&:nth-of-type(1){
+						margin-right: $split-gutter-width;
+					}
+
 					& img.dean-letter-image{
 						position: absolute;
 						top: 12px;
-						right: 60px;
-						width: 700px;
+						right: 4vw;
+						max-width: 700px;
 					}
+				}
+				&:last-of-type{
+					width: 100%;
 				}
 			}
 			& .content-row.short-gap {
 				margin-bottom: 20px;
 			}
-
 		}
-	}		
+	}
 }
 .readmore{
 	font-family: $work-sans-stack ;
 	font-weight: $semi-bold;
-    font-size: $font-size * 0.9;
-    color: $color-aqua-marine;
-    line-height: 1.9;
-    letter-spacing: 0.2px;
-    text-decoration: none;
-    text-transform: uppercase;
-    position: relative;
-    height: 100%;
-    & a:visited {color: $color-aqua-marine;}
-    & a{
-    	position: relative;
-    	float:left;
-    	text-decoration: none;
-    }
-    & a.arrow-down{
+	font-size: $font-size * 0.9;
+	color: $color-aqua-marine;
+	line-height: 1.9;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content:flex-start;
+	align-items: center;
+	letter-spacing: 0.2px;
+	text-decoration: none;
+	text-transform: uppercase;
+	position: relative;
+	height: 100%;
+	& a:visited {color: $color-aqua-marine;}
+	& a{
+		position: relative;
+		float:left;
+		text-decoration: none;
+	}
+	& a:nth-of-type(2){
 		position: relative;
 		width:15px;
-		height: 100%;
+		height: 15px;
 		line-height: 1.15;
 		margin:{
 			left: 10px;
 		}
 		text-decoration: none;
 		cursor: pointer;
-		background:{
-		image: $readmore-arrow-image-src;
-		repeat: no-repeat;
-		position: left center;
-		size:contain;
+		&.arrow-down{
+			background:{
+				image: $readmore-arrow-down-image-src;
+				repeat: no-repeat;
+				position: left center;
+				size:contain;
+			}
+		}
+		&.arrow-up{
+			background:{
+				image: $readmore-arrow-up-image-src;
+				repeat: no-repeat;
+				position: left center;
+				size:contain;
+			}
 		}
 		&:hover{
-		transform: scale(1.2,1.2);
+			transform: scale(1.2,1.2);
 		}
-    }
+	}
 }
 
 
 #director-letter-section{
+	margin-top: 100px;
+
 	& .main-wrapper{
-		padding:{
-			top: 100px;
-		}
-		.section-header{
-			position: relative;
-			margin:{
-				left: $full-column + $split-gutter-width;
-				bottom: 76px;
-			}
-			& p:first-child{
-				color: $color-turquoise-green;
-				font-family: $work-sans-stack;
-				font-weight: 400;
-		        font-size: $font-size * 2;
-		        line-height: 1;
-		        letter-spacing: 0.2px;
-		        text-decoration: none; 
-			}
-			& p:not(:first-child):last-child{
-				font-family: $contax-sans-regular-stack ;
-		        font-size: $font-size * 5.5;
-		        color: $color-dark;
-		        line-height: 1;
-		        letter-spacing: 0.9px;
-		        text-decoration: none; 
-			}
-		}
-		.section-content{
-			position: relative;
+		overflow-x: hidden;
+		& > div:nth-of-type(1){
 			display: flex;
-			flex-direction: column;
+			flex-flow: row nowrap;
 			justify-content: flex-start;
-			margin:{
-				right: $full-column;
-				left: 2*$full-column;
+			& > div:nth-of-type(1){
+				flex: 0 6 125px;
 			}
-			height: 100%;
-			& .content-row{
+			& > div:nth-of-type(3){
+				flex: 0 2 893px;
+			}
+			& > .section-header{
+				position: relative;
+				flex: 0 0 255px;
+				& > p:first-child{
+					color: $color-turquoise-green;
+					font-family: $work-sans-stack;
+					font-weight: 400;
+					font-size: $font-size * 2;
+					line-height: 1;
+					letter-spacing: 0.2px;
+					text-decoration: none;
+				}
+				& > p:nth-of-type(2){
+					font-family: $contax-sans-regular-stack ;
+					font-size: $font-size * 5.5;
+					color: $color-dark;
+					line-height: 1;
+					margin-top: 13px;
+					letter-spacing: 0.9px;
+					margin-left: -6px;
+					text-decoration: none;
+				}
+				& > p:nth-of-type(3){
+					font-family: $work-sans-stack ;
+					font-size: $font-size * 1.37;
+					color: $color-brownish-grey;
+					line-height: 1.6;
+					letter-spacing: 2.4px;
+					text-decoration: none;
+					text-transform: uppercase;
+				}
+			}
+		}
+		& > div:nth-of-type(2){
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: flex-start;
+			margin-top: -160px;
+			& > div:nth-of-type(1){
+				flex: 0 6 224px;
+			}
+			& > div:nth-of-type(3){
+				flex: 0 6 136px;
+			}
+			.section-content{
 				position: relative;
 				display: flex;
-				flex-direction: row;
+				flex: 0 1 984px;
+				flex-direction: column;
 				justify-content: flex-start;
-				margin-bottom: 50px;
-				height: 100%;
-				& .content-column{
+				& .content-row{
 					position: relative;
-					width: 33.33%;
-					margin-right: $split-gutter-width;
-					
-				}
-				& .content-column.one-column{
-					
-				}
-				& img.dean-letter-image{
-					position: absolute;
-					bottom: -30px;
-					left: 33.33%;
-					width: 700px;
-				}
-			}
+					display: flex;
+					flex-direction: row;
+					justify-content: flex-start;
+					margin-bottom: 50px;
+					&:nth-of-type(1){
+						align-items: flex-end;
+					}
+					&.close.extra{
+						display: none;
+					}
+					&.extra{
+						margin-bottom: 20px;
+						margin-top: 30px;
+						overflow: hidden;
+					}
+					&.more{
+						margin-bottom: 0px;
+					}
+					& .content-column{
+						position: relative;
+						width: 33.33%;
+						margin-right: $split-gutter-width;
+						& > img.dean-letter-image{
+							max-width: 700px;
+							position: relative;
+						}
 
-			& .content-row.short-gap {
-				margin-bottom: 20px;
-			}
 
+					}
+				}
+
+				& .content-row.short-gap {
+					margin-bottom: 20px;
+				}
+
+			}
 		}
-	}		
+	}
 }
 
 
-#awards-section{
-	position: relative;
-	height: 480px;
+#awards-section .main-wrapper{
+	display: flex;
+	flex-flow: column nowrap;
+
 	background:{
 		color: $color-pale-grey;
 	}
-	& .main-wrapper{
-		height: 100%;
+	& > .label{
+		align-self: flex-start;
+		margin-top: 100px;
+		position: relative;
+		margin-left: 9%;
 		&> p{
 			position: relative;
 			font-family: $contax-sans-regular-stack ;
@@ -228,80 +316,71 @@ section{
 			letter-spacing: -0.9px;
 			text-decoration: none;
 			z-index: 530;
-			margin:{
-				right: $split-gutter-width + $full-column;
-				left: $split-gutter-width + $full-column;
-			}
-			top: 100px;
-			// ask roy about this!
+			word-break: break-word;
 		}
-		
+	}
 
-		
-		& .awards-panel{
-			z-index: 520;
-			position: absolute;
-			right: $full-column + $split-gutter-width;
-			bottom:0px;
-			width: 650px;
-			height: auto;
-			background:{
-				color: $color-turquoise-green;
-			}
-			& .award-winners{
-				padding:{
-					top:50px;
-					right:50px;
-					left:40px;
-				}
-				p{
 
+
+	& > .awards-panel{
+		margin-top: -50px;
+		align-self: flex-end;
+		z-index: 520;
+		max-width: 670px;
+		margin-right: 9%;
+		height: auto;
+		background:{
+			color: $color-turquoise-green;
+		}
+		& .award-winners{
+			padding: 55px 6% 55px 5%;
+			p{
+
+				font-family: $work-sans-stack;
+				font-weight: $thin;
+		      font-size: $font-size * 1.25;
+		      color: $color-dark;
+		      line-height: 1.7;
+		      letter-spacing: -0.2px;
+		      text-decoration: none;
+				span{
 					font-family: $work-sans-stack;
-					font-weight: $thin;
-			      font-size: $font-size * 1.25;
-			      color: $color-dark;
-			      line-height: 1.7;
-			      letter-spacing: -0.2px;
-			      text-decoration: none;
-					span{
-						font-family: $work-sans-stack;
-						font-weight: $regular;
-				        font-size: $font-size * 1.25;
-				        color: $color-dark;
-				        line-height: 1.7;
-				        letter-spacing: -0.2px;
-				        text-decoration: none;
+					font-weight: $regular;
+			        font-size: $font-size * 1.25;
+			        color: $color-dark;
+			        line-height: 1.7;
+			        letter-spacing: -0.2px;
+			        text-decoration: none;
+				}
+			}
+			& > .readmore{
+			    color: $color-white;
+			    letter-spacing: 0.3px;
+			    height: 100%;
+			    margin-top: 12px;
+			    & a:visited {color: $color-white;}
+			    & a.arrow-right{
+					position: relative;
+					width:20px;
+					height: 20px;
+					line-height: 1.15;
+					margin:{
+						left: 10px;
+						top:3px;
 					}
-				}
-				& .readmore{
-				    color: $color-white;
-				    letter-spacing: 0.3px;
-				    height: 100%;
-				    margin-top: 12px;
-				    & a:visited {color: $color-white;}
-				    & a.arrow-right{
-						position: relative;
-						width:20px;
-						height: 20px;
-						line-height: 1.15;
-						margin:{
-							left: 10px;
-							top:3px;
-						}
-						text-decoration: none;
-						cursor: pointer;
-						transition: all 200ms;
-						background:{
-							image: $readmore-arrow-right-image-src;
-							repeat: no-repeat;
-							position: left center;
-							size:contain;
-						}
-						&:hover{
-						transform: scale(1.2,1.2);
-						}
-				    }
-				}
+					text-decoration: none;
+					cursor: pointer;
+					transition: all 200ms;
+					background:{
+						image: $readmore-arrow-right-image-src;
+						repeat: no-repeat;
+						position: left center;
+						size:contain;
+					}
+					&:hover{
+					transform: scale(1.2,1.2);
+					}
+			    }
 			}
 		}
 	}
@@ -315,7 +394,7 @@ section{
 #page-header.feature{
 	text-align: center;
 	& h1{
-		margin-top: 15px;
+		margin-top: 20px;
 	}
 	& p:first-of-type{
 		position: relative;
@@ -324,12 +403,13 @@ section{
 		font-size: $font-size * 1.75;
 		color: $color-slate-grey;
 		line-height: 1;
-		padding: 20px 0px;
+		padding: 16px 0px;
 		border: 4px solid $color-turquoise-green;
 		max-width: 380px;
 		margin:0 auto;
 		text-transform: uppercase;
 		text-align: center;
+		box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.15);
 		background-color: $color-white;
 		margin-top: -135px;
 		letter-spacing: 1.1px;
@@ -370,7 +450,7 @@ section{
 
 		& .project{
 			flex-basis: 33.3%;
-			
+
 			height: 250px;
 			width: 300px;
 			margin:{
@@ -515,7 +595,7 @@ section{
 		}
 		max-width: 875px;
 		& .faculty{
-			flex-basis: 50%;
+			flex-basis: 48%;
 			margin:{
 				top: 50px;
 			}
@@ -542,9 +622,29 @@ section{
 				text-decoration: none;
 			}
 		}
-		
+
 	}
 }
+#project-header .main-wrapper{
+	& > p:first-of-type{
+		position: relative;
+		display: inline-block;
+		top: -25px;
+		padding: 1px 25px 1px 25px;
+		background:{
+			color: $color-turquoise-green;
+		}
+		color: $color-white;
+		font-size: $font-size * 1.5;
+		line-height: 50px;
+		font-family: $work-sans-stack;
+		font-weight: $medium;
+		text-align: center;
+		margin-left: 10%;
+		width:auto;
+	}
+}
+
 #project-information .main-wrapper{
 	& > .row-1{
 		display: flex;
@@ -560,15 +660,43 @@ section{
 
 		}
 		& > div:nth-of-type(3){
+			flex-shrink: 0;
 			& > p{
-				margin-left: 0;	
+				margin-left: 0;
 			}
+		}
+		& > .student-additionals{
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: flex-start;
+			& > div:nth-of-type(1){
+				margin-left: 0px;
+				margin-right: 0px;
+			}
+			& > div:nth-of-type(2){
+				margin-top: 20px;
+				margin-left: 0px;
+				margin-right: 0px;
+				margin-bottom: -110px;
+			}
+		}
+	}
+	& .student-additionals{
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: flex-start;
+		& > div{
+			max-width: 300px;
+		}
+		& > div:nth-of-type(1){
+			margin-right: 30px;
+			margin-left: 10%;
+
 		}
 	}
 	& p.student-website, & p.student-email, & p.student-degree{
 		position: relative;
-		margin-left: 24%;	
-		width: 335px;
+
 	}
 	& p.student-website a, & p.student-email a, & p.student-degree{
 		font-size: $font-size * 1.12;
@@ -582,34 +710,17 @@ section{
 		font-family: $contax-sans-regular-stack;
 		margin-right: 5px;
 	}
-	& > p:first-of-type{
-		position: relative;
-		display: inline-block;
-		top: -25px;		
-		padding: 1px 25px 1px 25px;
-		background:{
-			color: $color-turquoise-green;
-		}
-		color: $color-white;
-		font-size: $font-size * 1.5;
-		line-height: 50px;
-		font-family: $work-sans-stack;
-		font-weight: $medium;
-		text-align: center;
-		margin-left: 10%;	
-		width:auto;
-	}
-	& > p:nth-of-type(2){
+	& > p:nth-of-type(1){
 		position: relative;
 		color: $color-dark;
 		font-size: $font-size * 4.1;
 		line-height: 1;
 		font-family: $contax-sans-regular-stack;
-		margin-left: 10%;	
-		width: 100%;
+		margin-left: 10%;
+		width: auto;
 		margin-bottom: 25px;
 	}
-	
+
 
 }
 
@@ -617,95 +728,117 @@ section{
 #project-content .main-wrapper{
 	& .grid-container{
 		position: relative;
-		margin-top: -90px;
-		& .paragraph:nth-of-type(1){
-			width:7*$full-column;
-			float: left;
-			margin-top: 80px;
-			& p{
-				padding: 0px 3*$full-column 0px 1*$full-column;
+		& > .row-1{
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: flex-start;
+			align-items: flex-start;
+			& > div:nth-of-type(1){
+				flex: 0 2 134px;
 			}
-		}
-		
-		& .slider:nth-of-type(2){
-			width:4*$full-column;
-			float: right;
-			height: 642px;
-			margin-right: $full-column;
+			& > div:nth-of-type(2){
+				flex: 0 1 447px;
 
-			
-		}
-		& .slider:nth-of-type(3){
-			width:6*$full-column;
-			height: 396px;
-			float: left;
-			margin-top: 60px;
-			margin-right: $full-column;
-		}
-		& .paragraph:nth-of-type(4){
-			width:5*$full-column;
-			float: right;
-			margin-top: 60px;
-			& p{
-				padding: 0px 2*$full-column 0px 0px;
+			}
+			& > div:nth-of-type(3){
+				flex: 0 2 203px;
+			}
+			& > div:nth-of-type(4){
+				flex: 0 1 426px;
+				margin-top: -115px;
+			}
+			& > div:nth-of-type(5){
+				flex: 0 2 134px;
 			}
 		}
-		& .slider:nth-of-type(5){
-			float: left;
-			width:4*$full-column;
-			height: 697px;
-			margin-top: 60px;	
-			margin-right: $full-column;
-			
-		
-		}
-		& .slider:nth-of-type(6){
-			width:7*$full-column;
-			float: right;
-			height: 464px;
+		& > .row-2{
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: flex-start;
 			margin-top: 60px;
-			
+			& > div:nth-of-type(1){
+				flex: 0 1 671px;
+				margin-top: -14%;
+			}
+			& > div:nth-of-type(2){
+				flex: 0 1 673px;
+			}
 		}
-		& .paragraph:nth-of-type(8){
-			width:5*$full-column;
-			float: left;
-			margin-top: 50px ;
-			& p{
-				padding: 0px 1*$full-column 0px 1*$full-column;
-				&:last-of-type{
-					line-height: 1.25;
-					margin-top: 30px;
-					font-family: $contax-sans-regular-stack;
+		& > .row-3{
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: flex-start;
+			margin-top: 60px;
+			& > div:nth-of-type(1){
+				flex: 0 1 581px;
+				& > .slider{
+					max-width: 470px;
 				}
 			}
-			& p span{
-				margin-right: 5px;
-				color: $color-turquoise-green;
-				line-height: 1.25;
-				font-family: $contax-sans-regular-stack;
+			& > div:nth-of-type(2){
+				flex: 0 2 203px;
+			}
+			& > div:nth-of-type(3){
+				margin-top: -20%;
+				flex: 0 1 335px;
+			}
+			& > div:nth-of-type(4){
+				flex: 0 1 225px;
 			}
 		}
-		
-		& .slider:nth-of-type(9){
-			width:7*$full-column;
-			height: 438px;
-			margin-top:	 30px; 
-			float: right;
-			
-		}
-		& .slider:nth-of-type(10){
-			width:100%;
+		& > .row-4{
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: flex-end;
 			margin-top: 60px;
-			height: 1104px;
-			float: left;
-			
+			& > div:nth-of-type(1){
+				flex: 0 1 561px;
+			}
+			& > div:nth-of-type(2){
+				flex: 0 2 783px;
+				margin-top: -45%;
+			}
+		}
+		& > .row-5{
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: flex-start;
+			margin-top: 60px;
+			& > div:nth-of-type(1){
+				flex: 0 2 134px;
+			}
+			& > div:nth-of-type(2){
+				flex: 0 1 447px;
+				margin-top: -60px;
+				& > p{
+					max-width: 314px;
+					&:last-of-type{
+						line-height: 1.25;
+						margin-top: 30px;
+						font-family: $contax-sans-regular-stack;
+						& > span{
+							margin-right: 5px;
+							color: $color-turquoise-green;
+							line-height: 1.25;
+							font-family: $contax-sans-regular-stack;
+						}
+					}
+				}
+			}
+			& > div:nth-of-type(3){
+				flex: 0 1 674px;
+				margin-top: -150px;
+			}
+		}
+		& > .row-6{
+			margin-top: 60px;
+			flex: 0 1 100%;
 		}
 	}
 
 }
 #featured-faculty{
 	overflow:hidden;
-	margin-top:80px;
 	& .main-wrapper{
 		& > p.header-credit{
 	    	margin: -80px auto 80px auto;
@@ -749,8 +882,7 @@ section{
 							line-height: 1.5;
 							font-family: $contax-sans-regular-stack;
 							letter-spacing: 0.2px;
-
-		  					color: $color-turquoise-green;	
+							color: $color-green-blue;
 						}
 						& br{
 							line-height: 0;
@@ -766,13 +898,14 @@ section{
 				justify-content: flex-start;
 				align-items: flex-start;
 				margin-top: 60px;
-				
+
 				width: 100%;
-				& .slider:first-of-type{
+				& > div:first-of-type{
 					max-width: 805px;
+					flex: 0 1 805px;
 					margin-right: 2vw;
 				}
-				& .slider:nth-of-type(3){
+				& > div:nth-of-type(3){
 					margin-top: 60px;
 					max-width: 657px;
 				}
@@ -787,12 +920,12 @@ section{
 				margin-top: 60px;
 			}
 			& .row-4{
-				
+
 				display: flex;
 				flex-flow: row nowrap;
 				align-self: stretch;
 				justify-content: flex-start;
-				
+
 				margin-top: 60px;
 				& .text-block{
 					margin-right: 4vw;
@@ -807,7 +940,7 @@ section{
 		  					margin-bottom: 20px;
 						}
 					}
-					
+
 				}
 				& .slider{
 					max-width: 645px;
@@ -823,12 +956,12 @@ section{
 				}
 			}
 			& .row-6{
-				
+
 				display: flex;
 				flex-flow: row nowrap;
 				align-self: stretch;
 				justify-content: flex-start;
-				
+
 				margin-top: 60px;
 				& .slider{
 					max-width: 645px;
@@ -846,7 +979,7 @@ section{
 				flex-flow: row nowrap;
 				align-self: stretch;
 				justify-content: flex-start;
-				
+
 				margin-top: 60px;
 				& .slider{
 					max-width: 645px;
@@ -865,7 +998,7 @@ section{
 				flex-flow: row nowrap;
 				align-self: stretch;
 				justify-content: flex-start;
-				
+
 				margin-top: 60px;
 				& .slider{
 					max-width: 645px;
@@ -878,16 +1011,17 @@ section{
 					flex: 0 2 457px;
 				}
 			}
-			
+
 			& .row-10{
 				display: flex;
 				flex-flow: row nowrap;
 				align-self: stretch;
 				justify-content: flex-start;
-				
+
 				margin-top: 60px;
 				& .text-block{
 					flex-shrink: 1;
+					padding-right: 6px;
 					& p{
 						max-width: 300px;
 						& span{
@@ -899,7 +1033,7 @@ section{
 		  					white-space: nowrap;
 						}
 					}
-					
+
 				}
 				& .slider{
 					margin-right: 3vw;
@@ -918,14 +1052,14 @@ section{
 				flex-flow: row nowrap;
 				align-self: stretch;
 				justify-content: flex-start;
-				
+
 				margin-top: 60px;
 				& .slider{
 					max-width: 683px;
 					flex:auto;
 				}
 			}
-			
+
 			& p.title{
 				max-width: 784px;
 				color: $color-purpley-grey;
@@ -988,6 +1122,7 @@ section{
 				}
 				& > div:nth-of-type(2){
 					max-width: 560px;
+					flex: 0 1 560px;
 					height: 312px;
 					& > *{
 						height: auto;
@@ -1023,7 +1158,7 @@ section{
 				}
 				& > div:nth-of-type(6){
 					display: none;
-					
+
 					& p{
 						max-width: 340px;
 						& span{
@@ -1049,7 +1184,7 @@ section{
 					max-width: 986px;
 					flex-shrink: 0;
 				}
-				
+
 				& > div:nth-of-type(3){
 					flex: 0 1 133px;
 				}
@@ -1063,7 +1198,7 @@ section{
 					max-width: 630px;
 					margin-right: 4%;
 				}
-				
+
 				& > div:nth-of-type(2){
 					max-width: 630px;
 				}
@@ -1076,7 +1211,6 @@ section{
 }
 #featured-alumna{
 	overflow:hidden;
-	margin-top:80px;
 	& .main-wrapper{
 		& .grid-container{
 			width: 100%;
@@ -1094,7 +1228,7 @@ section{
 				align-items: flex-start;
 				& > .slider{
 					max-width: 518px;
-					
+
 					flex-shrink: 1;
 				}
 				& > div:nth-of-type(1){
@@ -1113,12 +1247,12 @@ section{
 							line-height: 1.5;
 							font-family: $contax-sans-regular-stack;
 							letter-spacing: 0.2px;
-		  					color: $color-turquoise-green;	
+		  					color: $color-green-blue;
 						}
 						& br:first-of-type{
 							line-height: 0;
 						}
-						
+
 					}
 				}
 			}
@@ -1127,7 +1261,7 @@ section{
 				flex-flow: row nowrap;
 				align-self: stretch;
 				justify-content: flex-start;
-				
+
 				margin-top: 60px;
 				& > div:nth-of-type(1){
 					flex:0 5 136px;
@@ -1145,7 +1279,7 @@ section{
 		  					white-space: nowrap;
 						}
 					}
-					
+
 				}
 				& > .slider{
 					margin-right: 1%;
@@ -1153,7 +1287,7 @@ section{
 					flex-shrink: 1;
 					height: auto;
 				}
-				
+
 				& > div:last-of-type{
 					flex: 0 9 10px;
 				}
@@ -1172,7 +1306,7 @@ section{
 					max-width: 874px;
 					flex-shrink: 0;
 				}
-				
+
 				& > div:nth-of-type(3){
 					flex: 0 1 246px;
 				}
@@ -1181,12 +1315,12 @@ section{
 				margin-top: 60px;
 			}
 			& .row-4{
-				
+
 				display: flex;
 				flex-flow: row nowrap;
 				align-self: stretch;
 				justify-content: flex-start;
-				
+
 				margin-top: 60px;
 				& > div:nth-of-type(1){
 					flex:0 1 136px;
@@ -1218,18 +1352,18 @@ section{
 				}
 			}
 			& .row-5{
-				
+
 				display: flex;
 				flex-flow: row nowrap;
 				align-self: stretch;
 				justify-content: flex-end;
 				align-items: flex-end;
 				margin-top: -190px;
-				
+
 				& > div:nth-of-type(1){
 					max-width: 626px;
 					flex-shrink: 0;
-					height: 418px;
+
 					margin-right: 5%;
 				}
 				& > div:nth-of-type(2){
@@ -1242,13 +1376,13 @@ section{
 					flex:0 1 136px;
 				}
 			}
-			
+
 			& .row-7{
 				display: flex;
 				flex-flow: row nowrap;
 				align-self: stretch;
 				justify-content: flex-start;
-				
+
 				margin-top: 60px;
 				& > div:nth-of-type(1){
 					flex:0 12 136px;
@@ -1266,14 +1400,14 @@ section{
 		  					white-space: nowrap;
 						}
 					}
-					
+
 				}
 				& > .slider{
 					margin-right: 8%;
 					max-width: 650px;
 					flex-shrink: 1;
 				}
-				
+
 				& > div:last-of-type{
 					flex: 0 5 136px;
 				}
@@ -1296,15 +1430,14 @@ section{
 			& .row-9{
 				display: flex;
 				flex-flow: row wrap;
-				align-self: stretch;
 				justify-content: flex-start;
-				
+
 				margin-top: 60px;
 				& > div:nth-of-type(1){
 					flex:0 5 136px;
 				}
-				& > .text-block{
-					flex-shrink: 0;
+				& > div:nth-of-type(2){
+					flex: 0 1 300px;
 					margin-right: 9%;
 					& p{
 						max-width: 300px;
@@ -1317,16 +1450,20 @@ section{
 		  					white-space: nowrap;
 						}
 					}
-					
+
 				}
-				
+
 				& > div:nth-of-type(3){
 					height: 320px;
-					max-width: 650px;
+					flex: 0 1 650px;
 					flex-shrink: 0;
 					& > *{
 						height: auto;
 					}
+				}
+
+				& > div:nth-of-type(4){
+					display: none;
 				}
 				& > div:nth-of-type(5){
 					height: 660px;
@@ -1348,32 +1485,36 @@ section{
 					max-width: 1094px;
 					flex-shrink: 0;
 				}
-				
+
 				& > div:nth-of-type(3){
 					flex: 0 15 136px;
 				}
 			}
 			& .row-11{
-				
+
 				display: flex;
 				flex-flow: row nowrap;
 				align-self: stretch;
 				justify-content: space-between;
-				
+
 				margin-top: 60px;
-				
+
 				& > div:nth-of-type(1){
 					max-width: 31%;
 					flex-shrink: 1;
+					height: auto;
 				}
 				& > div:nth-of-type(2){
 					max-width: 31%;
 					flex-shrink: 1;
+					height: auto;
 
 				}
 				& > div:nth-of-type(3){
 					max-width: 31%;
+
 					flex-shrink: 1;
+					height: auto;
 
 				}
 			}
@@ -1391,7 +1532,7 @@ section{
 					max-width: 873px;
 					flex-shrink: 0;
 				}
-				
+
 				& > div:nth-of-type(3){
 					flex: 0 1 359px;
 				}
@@ -1410,12 +1551,12 @@ section{
 					max-width: 762px;
 					flex-shrink: 0;
 				}
-				
+
 				& > div:nth-of-type(3){
 					flex: 0 2 136px;
 				}
 			}
-			
+
 			& p.title{
 				max-width: 784px;
 				color: $color-purpley-grey;
@@ -1434,7 +1575,7 @@ section{
 
 
 	& > p.header-credit{
-    	margin: -80px auto 80px auto;
+    	margin: 0px auto 80px auto;
 		color: $color-slate-grey;
 		font-size: 2*$font-size;
 		line-height: $leading;
@@ -1450,232 +1591,255 @@ section{
 		flex-flow: column nowrap;
 		justify-content: flex-start;
 		align-items: center;
-		
+
 		& .row-1{
-			padding: 0 135px;
 			display: flex;
 			flex-flow: row nowrap;
-			
+			justify-content: center;
+
 			& .slider{
-				margin:0px 0.8vw;
+
 				&:first-of-type{
-					margin-left: 0;
+					margin-right: 60px;
+					flex: 0 1 520px;
+
 				}
 				&:last-of-type{
-					margin-right: 0;	
+					flex: 0 1 520px;
 				}
 
 			}
 		}
 		& .row-2{
-			padding-left:18%;
-			margin-top: 70px;
+
+			margin-top: 60px;
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: flex-start;
+			& .gap{
+				flex: 0 5 246px;
+			}
 			& .text-block{
-				width: 62%;
+				max-width: 90%;
+				flex:0 0 650px;
 			}
 		}
 		& .row-3{
 			margin-top: 60px;
-			padding: 0 135px;
 			display: flex;
-			align-self:flex-end;
+			justify-content: flex-end;
 			flex-flow: row nowrap;
 			& .slider{
-				max-width: 764px;
+				flex:0 1 768px;
+			}
+			& .gap{
+				flex: 0 5 135px;
 			}
 		}
 		& .row-4{
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: center;
 			margin-top: 60px;
-			padding-left:18%;
 			& .text-block{
+				max-width: 90%;
 				column-count: 2;
 				column-gap: 35px;
 				& p{
-					max-width: 400px;
+					max-width: 414px;
 				}
-				
+
 			}
 		}
 		& .row-5{
 			display: flex;
 			flex-flow: row nowrap;
 			margin-top: 60px;
-			align-items: center;
-			padding-right: 11%;
-			align-self: stretch;
-			justify-content: space-between;
+			align-items: flex-start;
 			& .text-block{
+				flex: 0 1 336px;
 				& p{
-					max-width: 365px;
-
+					&:not(:first-of-type){
+						margin-top: 15px;
+					}
 				}
-				
+				margin-right: 4%;
 			}
 			& .slider{
-				max-width: 764px;
+				flex: 0 1 784px;
+				margin-right: 4%;
 			}
 		}
 		& .row-6{
 			display: flex;
 			flex-flow: row nowrap;
 			margin-top: 60px;
-			padding-right: 10%;
-			padding-left:18%;
-			align-self: stretch;
-			justify-content: space-between;
-			align-items: flex-start;
-			& .text-block{
-				& p{
-					max-width: 520px;
-
-				}
-				
+			justify-content: flex-end;
+			& > div:nth-of-type(1){
+				flex: 0 5 134px;
 			}
-			& .slider{
-				max-width: 400px;
+			& > .text-block{
+				flex: 0 2 524px;
+				margin-left: 4%;
+			}
+			& > .slider{
+				flex: 0 1 400px;
+				margin-left: 5%;
+				margin-right: 4%;
+			}
+			& > div:nth-of-type(4){
+				flex: 0 5 134px;
 			}
 		}
 		& .row-7{
 			display: flex;
 			flex-flow: row nowrap;
 			margin-top: 60px;
-			padding-right: 24%;
-			padding-left:10%;
-			align-self: stretch;
-			justify-content: space-between;
-			align-items: flex-start;
-			& .text-block{
-				& p{
-					max-width: 370px;
-				}
+			justify-content: flex-start;
+			& > div:nth-of-type(1){
+				flex: 0 2 134px;
+			}
+			& > div:nth-of-type(4){
+				flex: 0 2 134px;
+			}
+			& > .text-block{
+				flex: 0 1 528px;
+				margin-right: 4%;
 			}
 			& .slider{
-				max-width: 426px;
+				flex: 0 1 426px;
+				margin-right: 8%;
 			}
 		}
 		& .row-8{
 			display: flex;
 			flex-flow: row nowrap;
-			padding-right: 9%;
-			padding-left:18%;
-			align-self: stretch;
-			justify-content: space-between;
-			align-items: flex-start;
-			margin-top: -165px;
-			& .text-block{
-				margin-top: 200px;
-				& p{
-					max-width: 365px;
-				}
+			justify-content: flex-start;
+			margin-top: 60px;
+			& > div:nth-of-type(1){
+				flex: 0 4 246px;
 			}
-			& .slider{
-				max-width: 538px;
+			& > div:nth-of-type(4){
+				flex: 0 4 134px;
+			}
+			& > .text-block{
+				flex: 0 1 368px;
+				margin-right: 6%;
+				margin-left: 4%;
+			}
+			& > .slider{
+				flex: 0 1 538px;
+				margin-top: -20%;
 			}
 		}
 		& .row-9{
 			display: flex;
 			flex-flow: row nowrap;
-			padding-right: 22%;
-			padding-left:0;
-			align-self: stretch;
-			justify-content: space-between;
-			align-items: center;
-			margin-top: -330px;
-			& .text-block{
-				& p{
-					max-width: 365px;
-				}
+			justify-content: flex-start;
+			margin-top: 60px;
+			& > .text-block{
+				flex: 0 1 365px;
+				margin-right: 4%;
 			}
-			& .slider{
-				max-width: 560px;
+			& > .slider{
+				flex: 0 2 560px;
+				margin-top: -20%;
+				margin-right: 10%;
+			}
+			& > div:nth-of-type(3){
+				flex: 0 3 300px;
 			}
 		}
 		& .row-10{
 			display: flex;
 			flex-flow: row nowrap;
-			padding-right:0;
-			padding-left:18%;
-			align-self: stretch;
-			justify-content: space-between;
-			align-items: center;
-			margin-top: -300px;
+			justify-content: flex-end;
+			margin-top: 60px;
+			& > div:nth-of-type(1){
+				flex: 0 3 200px;
+			}
 			& .text-block{
-				& p{
-					max-width: 414px;
-				}
+				flex: 0 1 414px;
+				margin-left: 4%;
+				margin-right: 10%;
 			}
 			& .slider{
-				max-width: 560px;
+				margin-top: -33%;
+				flex: 0 1 560px;
 			}
 		}
 		& .row-11{
 			display: flex;
 			flex-flow: row nowrap;
-			padding-right:0;
-			padding-left:18%;
-			align-self: stretch;
-			justify-content: space-between;
-			align-items: center;
-			margin-top: -300px;
-			& .text-block{
-				& p:first-of-type{
+			justify-content: flex-start;
+			margin-top: 60px;
+			& > .text-block{
+				flex: 0 1 414px;
+				margin-left: 4%;
+				margin-top: -18%;
+				& > p:first-of-type{
 					color: $color-dark;
 					font-size: 1.2*$font-size;
 					line-height: 1.2$leading;
 					font-family: $contax-sans-regular-stack;
-					margin-bottom: 40px;
-					
+					margin-bottom: 25px;
+
 				}
-				& p{
-					max-width: 414px;
-				}
+			}
+			& > div:nth-of-type(1){
+				flex: 0 5 200px;
+			}
+			& > div:nth-of-type(3){
+				flex: 0 2 calc( 560px + 10%);
 			}
 		}
 		& .row-12{
 			display: flex;
 			flex-flow: row nowrap;
-			padding-right:0;
-			padding-left:18%;
-			align-self: stretch;
 			margin-top: 60px;
-			justify-content: space-between;
-			align-items: center;
+			justify-content: flex-start;
 			& .text-block{
-				& p{
-					max-width: 650px;
-				}
+				flex: 0 1 650px;
+				margin-left: 4%;
+				margin-right: 4%;
+			}
+			& > div:nth-of-type(1){
+				flex: 0 7 190px;
+			}
+			& > div:nth-of-type(3){
+				flex: 0 5 395px;
 			}
 		}
 		& .row-13{
 			display: flex;
 			flex-flow: row nowrap;
-			align-self: stretch;
 			margin-top: 60px;
-			align-items: center;
 			justify-content: center;
 			& .slider{
-				max-width: 771px;
+				max-width: 860px;
 			}
 		}
 		& .row-14{
-			padding-right:0;
-			padding-left:18%;
-			align-self: stretch;
 			margin-top: 60px;
-
+			display: flex;
+			flex-flow: column nowrap;
+			align-items: center;
+			margin-right: 4%;
+			margin-left: 4%;
 			& .text-block{
-				& p{
-					padding-left:5px;
-					max-width: 764px;
-				}
+				max-width: 860px;
 			}
+
 		}
 		& .row-15{
-			padding-right:0;
-			padding-left:18%;
-			align-self: stretch;
 			margin-top: 60px;
+			display: flex;
+			flex-flow: column nowrap;
+			align-items: center;
+			margin-right: 4%;
+			margin-left: 4%;
 			& .text-block{
+				max-width: 860px;
 				& p{
 					& span{
 						padding-right:10px;
@@ -1683,19 +1847,18 @@ section{
 							content: ".";
 						}
 					}
-					padding-left:5px;
-					max-width: 764px;
 				}
 			}
 		}
 		& p.title{
-			max-width: 784px;
+			width: 100%;
 			color: $color-purpley-grey;
 			font-size: 1.2*$font-size;
-			line-height: 1.2$leading;
+			line-height: 1.2* $leading;
 			font-family: $contax-sans-regular-stack;
 			margin-bottom: 40px;
-			padding-top: 10px;
+			margin-right: 4%;
+			margin-left: 4%;
 			border-top: 2px solid $color-purpley-grey;
 		}
 
@@ -1723,7 +1886,7 @@ section{
 			line-height: 1.5;
 			font-family: $work-sans-stack;
 			font-weight: $regular;
-			
+
 		}
 		& p:nth-of-type(3){
 			color: $color-dark;
@@ -1792,9 +1955,9 @@ section{
 		margin: 0 auto;
 		flex-flow: column nowrap;
 		max-width: 920px;
-		
+
 		& .award{
-			
+
 			width: 100%;
 			margin-bottom: 55px;
 			position: relative;
@@ -1821,7 +1984,7 @@ section{
 						min-height: 275px;
 						height: 100%;
 						display: flex;
-						
+
 						flex-flow: column nowrap;
 						justify-content: flex-start;
 						position: relative;
@@ -1843,11 +2006,11 @@ section{
 							font-weight: $light;
 							font-size: 1.8*$font-size;
 							letter-spacing: -0.2px;
-							
+
 						}
 
 					}
-					
+
 				}
 				& .project-information{
 					flex-basis: 60%;
@@ -1863,7 +2026,7 @@ section{
 						color: $color-purpley-grey;
 						font-size: 0.9*$font-size;
 						font-family: $contax-sans-regular-stack;
-						
+
 					}
 					& p:nth-of-type(1){
 						color: $color-slate-grey;
@@ -1880,7 +2043,7 @@ section{
 	}
 }
 #credits .main-wrapper{
-	
+
 	margin-bottom:80px;
 	& .credit{
 		margin: 0 auto;
@@ -1898,7 +2061,7 @@ section{
 		}
 		& div:nth-of-type(2){
 			width:100%;
-			
+
 			color: $color-purpley-grey;
 			font-size: 1.5*$font-size;
 			line-height: $leading;

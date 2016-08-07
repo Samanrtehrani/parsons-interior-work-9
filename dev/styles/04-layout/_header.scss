@@ -30,40 +30,137 @@ header{
       width:100%;
       height:100%;
     }
+    & > .main-wrapper{
+      height: 100%;
+    }
+    & .right-nav{
+      z-index: 505;
+      position: absolute;
+      right: 0px;
+      height: 100%;
+      width:30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      resize: vertical;
+      & .nav-controls{
+        position: relative;
+        right: 20px;
+        height: 30px;
+        width: 30px;
+        resize: vertical;
+        background:{
+          image: $right-nav-arrow-image-src;
+          repeat: no-repeat;
+          position: center center;
+          size:contain;
+        }
+        &:hover{
+          background:{
+            image: $right-nav-arrow-hover-image-src;
+            repeat: no-repeat;
+            position: center center;
+          }
+        }
+        cursor: pointer;
+      }
+    }
+
+    & .left-nav{
+      z-index: 505;
+      position: absolute;
+      left:0px;
+      height: 100%;
+      width:30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      resize: vertical;
+      & .nav-controls{
+        position: relative;
+        left: 20px;
+        height: 30px;
+        width: 30px;
+        resize: vertical;
+        background:{
+          image: $left-nav-arrow-image-src;
+          repeat: no-repeat;
+          position: center center;
+          size:contain;
+        }
+        &:hover{
+          background:{
+            image: $left-nav-arrow-hover-image-src;
+            repeat: no-repeat;
+            position: center center;
+          }
+        }
+        cursor: pointer;
+      }
+    }
+    & .bottom-nav{
+      z-index: 510;
+      position: absolute;
+      bottom: 0px;
+      left:0px;
+      height: 50px;
+      width:100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      
+      & .nav-controls{
+        margin:{
+          bottom: 15px;
+        }
+        resize: vertical;
+        height: 40px;
+        width: 40px;
+        background:{
+          image: $bottom-nav-arrow-image-src;
+          repeat: no-repeat;
+          position: center center;
+          size: contain;
+        }
+        &:hover{
+          transform: scale(1.2,1.2);
+        }
+        cursor: pointer;
+      }
+    }
 }
 .header-wrapper{
   position: relative;
-  left: 0px;
-  width: 50%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
   height: 100%;
+  & > div:nth-of-type(1){
+    flex: 0 1 310px;
+  }
+  & > div:nth-of-type(3){
+    flex: 0 1 630px;
+  }
   .header-container{
-    margin:{
-      top: 29vh;
-    }
+    flex-shrink: 0;
     position: relative;
-    float: right;
-    height: 100%;
-    & .header-panel{
-      position: absolute;
-      right: 0;
-      & .school-name{
-        font-family: $work-sans-stack;
-        font-size: 3.5vh;
-        line-height: 1;
-        color: $color-slate-grey;
-      }
-      & .edition-name{
-        font-family: $contax-sans-regular-stack;
-        font-size: 20vh;
-        color: $color-dark;
-        line-height: 1;
-      }
-      & .edition-info{
-        font-family: $work-sans-stack;
-        font-size: 5vh;
-        color: $color-slate-grey;
-        white-space:nowrap;
-      }      
+    & > .school-name{
+      font-family: $work-sans-stack;
+      font-size: $font-size * 1.3;
+      line-height: 1;
+      color: $color-slate-grey;
+    }
+    & > .edition-name{
+      font-family: $contax-sans-regular-stack;
+      font-size: $font-size * 8.5;
+      color: $color-dark;
+      line-height: 1;
+    }
+    & > .edition-info{
+      font-family: $work-sans-stack;
+      font-size: $font-size * 2;
+      color: $color-slate-grey;
+      white-space:nowrap;
     }
   }
   .student-header-container{
@@ -227,10 +324,9 @@ nav{
   max-width: $wrapper-full-width;
   margin: 40px auto 78px auto;
   width: 95%;
-  height: 90%;
+  height: auto;
   position: relative;
   top: 0;
-
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -245,9 +341,8 @@ nav{
     align-content: center;
     justify-content: flex-start;
     flex-basis: 50%;
-    margin-bottom: 75px;
+    margin-bottom: 40px;
     text-align: left;
-    align-items: center;
     &.empty{
       height: 0;
     }
@@ -345,20 +440,21 @@ nav{
     flex-flow: column wrap;
     justify-content: flex-start;
     align-items: center;
-    & div{
+    max-height: 65vh;
+    & > div{
       width:315px;
       text-align: left;
       list-style: none;
       
       margin-bottom: 12px;
     }
-    & div.section-title{
+    & > div.section-title{
       font-family: $contax-sans-regular-stack;
       font-size: $font-size * 1;
       color: $color-turquoise-green;
 
     }
-    & div a{
+    & > div a{
       font-family: $work-sans-stack;
       font-weight: $light;
       font-size: $font-size * 1.75;
@@ -366,102 +462,5 @@ nav{
       color: $color-dark;
       & :visited {color: $color-dark;}
     }
-  }
-}
-.right-nav{
-  z-index: 505;
-  position: absolute;
-  right: 20px;
-  height: 100%;
-  width:30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  resize: vertical;
-  & .nav-controls{
-    margin:{
-      right: 20px;
-    }
-    height: 30px;
-    width: 30px;
-    resize: vertical;
-    background:{
-      image: $right-nav-arrow-image-src;
-      repeat: no-repeat;
-      position: center center;
-      size:contain;
-    }
-    &:hover{
-      background:{
-        image: $right-nav-arrow-hover-image-src;
-        repeat: no-repeat;
-        position: center center;
-      }
-    }
-    cursor: pointer;
-  }
-}
-
-.left-nav{
-  z-index: 505;
-  position: absolute;
-  left:0px;
-  height: 100%;
-  width:30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  resize: vertical;
-  & .nav-controls{
-    margin:{
-      left: 20px;
-    }
-    height: 30px;
-    width: 30px;
-    resize: vertical;
-    background:{
-      image: $left-nav-arrow-image-src;
-      repeat: no-repeat;
-      position: center center;
-      size:contain;
-    }
-    &:hover{
-      background:{
-        image: $left-nav-arrow-hover-image-src;
-        repeat: no-repeat;
-        position: center center;
-      }
-    }
-    cursor: pointer;
-  }
-}
-.bottom-nav{
-  z-index: 510;
-  position: absolute;
-  bottom: 0px;
-  left:0px;
-  height: 50px;
-  width:100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  
-  & .nav-controls{
-    margin:{
-      bottom: 15px;
-    }
-    resize: vertical;
-    height: 40px;
-    width: 40px;
-    background:{
-      image: $bottom-nav-arrow-image-src;
-      repeat: no-repeat;
-      position: center center;
-      size: contain;
-    }
-    &:hover{
-      transform: scale(1.2,1.2);
-    }
-    cursor: pointer;
   }
 }

@@ -10,7 +10,7 @@ $leading: 1.6 ;           			                         // 26 pixels
 // =================================================================================
 $column-width: 90px;
 $split-gutter-width: 22px;
-$body-width: (12 * ($column-width + $split-gutter-width)); // 1344 pixels
+$body-width: (12 * ($column-width + $split-gutter-width)) + 22; // 1344 + 22 = 1366 pixels , fixed by adding 22
 $full-column: ($column-width + $split-gutter-width) ; //112px
 
 $wrapper-full-width: $body-width;
@@ -18,7 +18,7 @@ $wrapper-full-width: $body-width;
 // =================================================================================
 // Measurement Grid-specific variables.
 // =================================================================================
-$grid-width: $column-width;                                            
+$grid-width: $column-width;
 $grid-gutter: $split-gutter-width;
 $color-grid-column: rgba(200, 0, 0, 0.2);
 $color-grid-baseline: rgba(56, 255, 255, 0.8);
@@ -84,9 +84,9 @@ $users-comparison-bg-image--color: transparent;
 //Header Variables:
 // =================================================================================
 $header-background-image-src: url('../img/header-background.png');
-$header-height-full: 100%; 
-$header-height-fixed-400: 400px; 
-$header-height-fixed-750: 750px; 
+$header-height-full: 100%;
+$header-height-fixed-400: 400px;
+$header-height-fixed-750: 750px;
 $left-nav-arrow-image-src: url('../img/arrow-left.png');
 $left-nav-arrow-hover-image-src: url('../img/arrow-left-hover.png');
 $right-nav-arrow-image-src: url('../img/arrow-right.png');

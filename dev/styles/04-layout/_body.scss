@@ -661,6 +661,7 @@ section{
 		}
 		& > div:nth-of-type(3){
 			flex-shrink: 0;
+			margin-right: 4%;
 			& > p{
 				margin-left: 0;
 			}
@@ -696,7 +697,6 @@ section{
 	}
 	& p.student-website, & p.student-email, & p.student-degree{
 		position: relative;
-
 	}
 	& p.student-website a, & p.student-email a, & p.student-degree{
 		font-size: $font-size * 1.12;
@@ -1021,7 +1021,7 @@ section{
 				margin-top: 60px;
 				& .text-block{
 					flex-shrink: 1;
-					padding-right: 6px;
+					padding-right: 6%;
 					& p{
 						max-width: 300px;
 						& span{
@@ -1123,14 +1123,14 @@ section{
 				& > div:nth-of-type(2){
 					max-width: 560px;
 					flex: 0 1 560px;
-					height: 312px;
+					height: auto;
 					& > *{
 						height: auto;
 					}
 				}
 				& > div:nth-of-type(3){
 					flex:0 1 calc(100% - 560px);
-					margin-top: 90px;
+					margin-top: -400px;
 					& .slider{
 						margin: 0 auto;
 						max-width: 537px;
@@ -1138,22 +1138,27 @@ section{
 				}
 				& > div:nth-of-type(4){
 					flex:0 1 calc(100% - 565px);
-					margin-top: 60px;
+					margin-top: -30px;
 					& .slider{
 						max-width: 694px;
 					}
 				}
 				& > div:nth-of-type(5){
-					margin-top: 110px;
+					margin-top: 90px;
 					margin-left: 6%;
 					& p{
 						max-width: 354px;
-						& span{
-						margin-right: 5px;
-						color: $color-turquoise-green;
+						&:last-of-type{
 						line-height: 1.25;
+						margin-top: 30px;
 						font-family: $contax-sans-regular-stack;
-					}
+							& > span{
+								margin-right: 5px;
+								color: $color-turquoise-green;
+								line-height: 1.25;
+								font-family: $contax-sans-regular-stack;
+							}
+						}
 					}
 				}
 				& > div:nth-of-type(6){
@@ -1615,13 +1620,14 @@ section{
 			margin-top: 60px;
 			display: flex;
 			flex-flow: row nowrap;
-			justify-content: flex-start;
-			& .gap{
-				flex: 0 5 246px;
-			}
+			justify-content: center;
+
 			& .text-block{
 				max-width: 90%;
-				flex:0 0 650px;
+				flex: 0 1 755px;
+				& > p{
+					padding-right: 100px;
+				}
 			}
 		}
 		& .row-3{
@@ -1630,10 +1636,10 @@ section{
 			justify-content: flex-end;
 			flex-flow: row nowrap;
 			& .slider{
-				flex:0 1 768px;
+				flex:0 1 770px;
 			}
 			& .gap{
-				flex: 0 5 135px;
+				flex: 0 5 134px;
 			}
 		}
 		& .row-4{
@@ -1841,7 +1847,7 @@ section{
 			& .text-block{
 				max-width: 860px;
 				& p{
-					& span{
+					& span:first-of-type{
 						padding-right:10px;
 						&:after{
 							content: ".";

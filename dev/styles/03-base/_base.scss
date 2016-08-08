@@ -37,7 +37,25 @@ p{
          padding: 2px;
          padding-top:20px;
          font-family: $contax-sans-regular-stack;
-         color: $color-black;    
+         color: $color-black;
       }
    }
+}
+sup{
+   font-size: small;
+   color: $color-turquoise-green;
+   vertical-align:super;
+   cursor: pointer;
+}
+sup:hover:after{
+  content: attr(data-footnote);
+  position: absolute;
+  background-color: rgba(229,228,230,0.95);
+  margin-top: 10px;
+  max-width: 350px;
+  color: $color-brownish-grey;
+  font-size: 16px;
+  margin-left: 5px;
+  z-index: 700;
+  padding: 30px 30px;
 }

@@ -206,10 +206,8 @@ window.onload = function () {
     var slidersElements = document.querySelectorAll('.slider');
 
     for(var i = 0 ; i < slidersElements.length ; i++) {
-        sliders.push( new simpleCarousel(slidersElements[i],options) );
-    }
-    for(i = 0; i < sliders.length; i++) {
-        sliders[i].initialize();
+        sliders.push( new simpleCarousel(i,slidersElements[i],options) );
+        sliders[sliders.length-1].initialize();
     }
     var navControls = document.querySelectorAll('.nav-controls');
     for( var it = 0 ; it < navControls.length ; it++){
@@ -443,7 +441,8 @@ function gridHandler(){
 
 }
 
-function simpleCarousel(carouselElement, options){
+function simpleCarousel(id,carouselElement, options){
+    this.id = id;
     if ( (function(){
         //validate options
         return true;
@@ -469,14 +468,16 @@ function simpleCarousel(carouselElement, options){
 }
 
 simpleCarousel.prototype.initialize= function(){
-    this.evaluateSlides();
+
+    if( this.evaluateSlides() > 0 ){
+        this.registerClickHandlers();
+        this.registerTouchHandlers();
+    }
+
     this.setOptions();
-    this.registerClickHandlers();
-    this.registerTouchHandlers();
 };
 simpleCarousel.prototype.setOptions = function(){
-    this.slides[0].el.style.marginLeft = '0px';
-    this.slides[0].el.style.transition = 'margin-left '+this.options.transitionTime+'ms';
+
 };
 simpleCarousel.prototype.evaluateSlides = function(){
     var self = this;
@@ -485,20 +486,31 @@ simpleCarousel.prototype.evaluateSlides = function(){
     var sliderControlsListElement = this.carousel.querySelector('.slider-controls > ul');
 
     sliderControlsListElement.innerHTML = '';
-
-    for(var i = 0; i < slideElements.length; i++) {
-        var liControl = document.createElement('li');
-
-        var reference = i;
-        liControl.dataset.slideId = reference;
-        slideElements[i].dataset.controlId = reference;
-
-        if( i === 0 )
-            liControl.classList.add('current');
-
-        sliderControlsListElement.appendChild(liControl);
-        self.slides.push({el:slideElements[i],c:liControl,ref:reference});
+    if( !slideElements ){
+        console.warn('Slides couldn\'t be found! in Carousel #'+this.id);
+        return -1;
     }
+    if( slideElements.length > 1){
+        for(var i = 0; i < slideElements.length; i++) {
+            var liControl = document.createElement('li');
+
+            var reference = i;
+            liControl.dataset.slideId = reference;
+            slideElements[i].dataset.controlId = reference;
+
+            if( i === 0 )
+                liControl.classList.add('current');
+
+            sliderControlsListElement.appendChild(liControl);
+            self.slides.push({el:slideElements[i],c:liControl,ref:reference});
+        }
+        this.slides[0].el.style.marginLeft = '0px';
+        this.slides[0].el.style.transition = 'margin-left '+this.options.transitionTime+'ms';
+
+        return 1;
+    }
+    console.warn('No more than 1 slide found! in Carousel #'+this.id);
+    return 0;
 };
 
 simpleCarousel.prototype.registerClickHandlers= function(){
@@ -541,10 +553,10 @@ simpleCarousel.prototype.startTouch = function(evnt){
     this.touchStartPosition.x = evnt.touches[0].pageX;
     this.touchStartPosition.y = evnt.touches[0].pageY;
 };
-simpleCarousel.prototype.moveTouch = function(){
+simpleCarousel.prototype.moveTouch = function(evnt){
 
-    this.touchLatestPosition.x =  event.touches[0].pageX;
-    this.touchLatestPosition.y =  event.touches[0].pageY;
+    this.touchLatestPosition.x =  evnt.touches[0].pageX;
+    this.touchLatestPosition.y =  evnt.touches[0].pageY;
 
     this.dragDistance.x = this.touchLatestPosition.x - this.touchStartPosition.x;
 
@@ -583,6 +595,7 @@ simpleCarousel.prototype.moveToIndex = function(nextIndex){
     },this.options.transitionTime);
     this.slides[0].el.style.marginLeft = '-'+nextIndex*sliderWidth+'px';
 };
+
 /** END
 * GRID HANDLER SECTION
 */

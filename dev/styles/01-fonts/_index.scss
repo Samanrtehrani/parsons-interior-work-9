@@ -1,0 +1,16 @@
+//
+// Fonts
+//
+// Import any fonts here, since they will be used by the entirety of this project.
+//
+@import url( 'http://fonts.googleapis.com/css?family=Ubuntu:300,700,300italic&subset=latin,latin-ext' );
+@import url( 'https://fonts.googleapis.com/css?family=Work+Sans:300,100,500,400,600' );
+
+@font-face{
+	font-family: 'Contax Sans Regular';
+	src: url('../fonts/contax-sans-55-regular.otf') format('opentype');
+}
+@font-face{
+	font-family: 'Contax Sans Italic';
+	src: url('../fonts/contax-sans-56-italic.otf') format('opentype');
+}

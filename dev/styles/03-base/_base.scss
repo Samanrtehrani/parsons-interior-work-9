@@ -1,0 +1,61 @@
+.main-wrapper{
+	max-width: $wrapper-full-width;
+	margin: 0 auto;
+	position: relative;
+	z-index: 500;
+}
+h1{
+   position: relative;
+   color: $color-dark;
+   font-size: 6*$font-size;
+   line-height: 0.95;
+   font-family: $contax-sans-regular-stack;
+   letter-spacing: -0.5px;
+}
+
+a{
+   color: $color-aqua-blue;
+   text-decoration: none;
+}
+br{
+   line-height: 45px;
+}
+i{
+   font-style: italic;
+}
+p{
+   font-size: 1*$font-size;
+   line-height: 1.6;
+   font-family: $work-sans-stack;
+   font-weight: $regular;
+   color: $color-brownish-grey;
+   &.cap-letter{
+      &::first-letter{
+         font-size: 4.3*$font-size;
+         line-height: 30px;
+         float: left;
+         padding: 2px;
+         padding-top:20px;
+         font-family: $contax-sans-regular-stack;
+         color: $color-black;
+      }
+   }
+}
+sup{
+   font-size: small;
+   color: $color-turquoise-green;
+   vertical-align:super;
+   cursor: pointer;
+}
+sup:hover:after{
+  content: attr(data-footnote);
+  position: absolute;
+  background-color: rgba(229,228,230,0.95);
+  margin-top: 10px;
+  max-width: 350px;
+  color: $color-brownish-grey;
+  font-size: 16px;
+  margin-left: 5px;
+  z-index: 700;
+  padding: 30px 30px;
+}

@@ -1,0 +1,111 @@
+// =================================================================================
+// Base font sizing and leading.
+// =================================================================================
+$font-size: 16px;                                              // 16 pixels
+$leading: 1.6 ;           			                         // 26 pixels
+
+
+// =================================================================================
+// Body sizing.
+// =================================================================================
+$column-width: 90px;
+$split-gutter-width: 22px;
+$body-width: (12 * ($column-width + $split-gutter-width)) + 22; // 1344 + 22 = 1366 pixels , fixed by adding 22
+$full-column: ($column-width + $split-gutter-width) ; //112px
+
+$wrapper-full-width: $body-width;
+
+// =================================================================================
+// Measurement Grid-specific variables.
+// =================================================================================
+$grid-width: $column-width;
+$grid-gutter: $split-gutter-width;
+$color-grid-column: rgba(200, 0, 0, 0.2);
+$color-grid-baseline: rgba(56, 255, 255, 0.8);
+
+// =================================================================================
+// Color Codes
+// =================================================================================
+
+$color-black:			rgb(0,0,0);
+$color-slate-grey:		rgb(81,77,88);
+$color-dark:			rgb(37,32,46);
+$color-white:			rgb(250,250,250);
+$color-red:				rgb(255,0,0);
+$color-green:			rgb(0,255,0);
+$color-blue:			rgb(0,0,255);
+$color-turquoise-green: rgb(10,237,143);
+$color-brownish-grey: 	rgb(105,104,95);
+$color-aqua-marine:		rgb(42,204,221);
+$color-aqua-blue:		rgb(10,215,237);
+$color-purpley-grey:	rgb(154,152,157);
+$color-pale-grey:		rgba(154,152,157,0.5);
+$color-light-grey:		rgb(213,232,221);
+$color-light-grey-transparent: rgba(213,232,221,0.1);
+$color-border: #21bde1;
+$color-foreground: #555;
+$color-background-nav: #f0ab3b;
+$color-duck-egg-blue: rgba(228,249,240,1);
+$color-duck-egg-blue-t: rgba(228,249,240,0.96);
+$color-green-blue: rgb(33, 205,134);
+
+// =================================================================================
+// Font Variables
+// =================================================================================
+$contax-sans-regular-stack : 'Contax Sans Regular', sans-serif;
+$contax-sans-italic-stack : 'Contax Sans Italic', sans-serif;
+$work-sans-stack : 'Work Sans', sans-serif;
+$thin: 100;
+$extra-light: 200;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semi-bold: 600;
+
+
+
+
+// =================================================================================
+// The image `modular-grid.png` on line 18 below is used as a background image by
+// the file `index.html`. It should be updated by the user in order to compare it to
+// the background grid defined at the top of this document.
+// =================================================================================
+$users-comparison-bg-image: url('../img/modular-grid.png');
+$users-comparison-bg-image--height: 3111px;
+$users-comparison-bg-image--position-x: center;
+$users-comparison-bg-image--position-y: top;
+$users-comparison-bg-image--size-x: auto;
+$users-comparison-bg-image--size-y: auto;
+$users-comparison-bg-image--attachment: scroll;
+$users-comparison-bg-image--repeat: no-repeat;
+$users-comparison-bg-image--color: transparent;
+
+// =================================================================================
+//Header Variables:
+// =================================================================================
+$header-background-image-src: url('../img/header-background.png');
+$header-height-full: 100%;
+$header-height-fixed-400: 400px;
+$header-height-fixed-750: 750px;
+$left-nav-arrow-image-src: url('../img/arrow-left.png');
+$left-nav-arrow-hover-image-src: url('../img/arrow-left-hover.png');
+$right-nav-arrow-image-src: url('../img/arrow-right.png');
+$right-nav-arrow-hover-image-src: url('../img/arrow-right-hover.png');
+$bottom-nav-arrow-image-src: url('../img/arrow-bottom.png');
+
+// =================================================================================
+//Menu Variables
+// =================================================================================
+$sub-menu-arrow-image-src: url('../img/arrow-sub-menu.png');
+$sub-menu-arrow-back-image-src: url('../img/arrow-sub-menu-back.png');
+
+
+$readmore-arrow-right-image-src: url('../img/arrow-readmore-right.png');
+$readmore-arrow-down-image-src: url('../img/arrow-down-readmore.png');
+$readmore-arrow-up-image-src: url('../img/arrow-up-readmore.png');
+
+// =================================================================================
+//Student Directory
+// =================================================================================
+$project-image-width : 142px;
+$project-image-height : $project-image-width ;

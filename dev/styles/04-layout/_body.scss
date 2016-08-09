@@ -132,7 +132,6 @@ section{
 
 #director-letter-section{
 	margin-top: 100px;
-	margin-bottom: 40px;
 	& .main-wrapper{
 		overflow-x: hidden;
 		display: flex;
@@ -155,6 +154,9 @@ section{
 		}
 		& > div:nth-of-type(4){
 			flex: 0 2 732px;
+			& > div:nth-of-type(1){
+				height: auto;
+			}
 			& > div:nth-of-type(2){
 				margin-top: 60px;
 				& > p{

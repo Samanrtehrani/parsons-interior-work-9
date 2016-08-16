@@ -23,14 +23,12 @@ footer{
 		position: relative;
 		resize: horizontal;
 		text-align: center;
-		width : 100/3%;
-		height:100%;
 		font-family: $work-sans-stack;
 		color: $color-purpley-grey;
 		font-weight: 400;
         font-size: $font-size;
         line-height: 1.4;
-        text-decoration: none; 
+        text-decoration: none;
         & a{
 			color: $color-aqua-marine;
 			text-decoration: none;

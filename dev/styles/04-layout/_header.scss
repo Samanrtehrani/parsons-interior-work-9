@@ -189,6 +189,10 @@ nav{
 
   & .sticky-background{
     position: fixed;
+    display: flex;
+    flex-flow: row  nowrap;
+    justify-content: strech;
+
     z-index: 490;
     width: 100%;
     height: 78px;
@@ -197,15 +201,78 @@ nav{
     background:{
       color: $color-duck-egg-blue-t;
     }
+    & .right-nav{
+      z-index: 540;
+      position: absolute;
+      right: 0px;
+      height: 100%;
+      width:30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      resize: vertical;
+      & .nav-controls{
+        position: relative;
+        right: 20px;
+        height: 30px;
+        resize: vertical;
+        background:{
+          image: $black-right-nav-arrow-image-src;
+          repeat: no-repeat;
+          position: center center;
+          size:contain;
+        }
+        &:hover{
+          background:{
+            image: $right-nav-arrow-hover-image-src;
+            repeat: no-repeat;
+            position: center center;
+          }
+        }
+        cursor: pointer;
+      }
+    }
+
+    & .left-nav{
+      z-index: 540;
+      position: absolute;
+      left:0px;
+      height: 100%;
+      width:30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      resize: vertical;
+      & .nav-controls{
+        position: relative;
+        left: 20px;
+        height: 30px;
+        resize: vertical;
+        background:{
+          image: $black-left-nav-arrow-image-src;
+          repeat: no-repeat;
+          position: center center;
+          size:contain;
+        }
+        &:hover{
+          background:{
+            image: $left-nav-arrow-hover-image-src;
+            repeat: no-repeat;
+            position: center center;
+          }
+        }
+        cursor: pointer;
+      }
+    }
   }
 
 }
 .menu-panel{
-  width: 100%;
+  width: 80%;
   position: fixed;
   height: 78px;
   top: 0px;
-  left: 0px;
+  left: 10%;
   text-align: center;
   z-index: 520;
 
@@ -307,8 +374,8 @@ nav{
     bottom:78px;
   }
   top: 0px;
-  left: 0px;
-  width: 100%;
+  left: -10vw;
+  width: 100vw;
   height: 100vh;
   z-index: 525;
   transition: all 800ms ;

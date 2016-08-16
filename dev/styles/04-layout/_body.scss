@@ -28,10 +28,10 @@ section{
 		z-index: 500;
 		margin-bottom: 0px;
 	}
-	margin-bottom: 40px;
 	&:last-of-type{
 		margin-bottom: 0px;
 	}
+	margin-bottom: 40px;
 }
 
 #dean-letter-section{
@@ -225,95 +225,98 @@ section{
 	}
 }
 
-#awards-section .main-wrapper{
-	display: flex;
-	flex-flow: column nowrap;
-
+#awards-section {
 	background:{
 		color: $color-pale-grey;
 	}
-	& > .label{
-		align-self: flex-start;
-		margin-top: 100px;
-		position: relative;
-		margin-left: 9%;
-		&> p{
+	.main-wrapper{
+		display: flex;
+		flex-flow: column nowrap;
+		& > .label{
+			align-self: flex-start;
+			margin-top: 100px;
 			position: relative;
-			font-family: $contax-sans-regular-stack ;
-			font-size: $font-size * 5.5;
-			color: $color-dark;
-			line-height: 1;
-			text-transform: uppercase;
-			letter-spacing: -0.9px;
-			text-decoration: none;
-			z-index: 530;
-			word-break: break-word;
+			margin-left: 9%;
+			&> p{
+				position: relative;
+				font-family: $contax-sans-regular-stack ;
+				font-size: $font-size * 5.5;
+				color: $color-dark;
+				line-height: 1;
+				text-transform: uppercase;
+				letter-spacing: -0.9px;
+				text-decoration: none;
+				z-index: 530;
+				word-break: break-word;
+				hyphens: manual;
+			}
 		}
-	}
 
 
 
-	& > .awards-panel{
-		margin-top: -50px;
-		align-self: flex-end;
-		z-index: 520;
-		max-width: 670px;
-		margin-right: 9%;
-		height: auto;
-		background:{
-			color: $color-turquoise-green;
-		}
-		& .award-winners{
-			padding: 55px 6% 55px 5%;
-			p{
+		& > .awards-panel{
+			margin-top: -50px;
+			align-self: flex-end;
+			z-index: 520;
+			max-width: 670px;
+			margin-right: 9%;
+			height: auto;
+			background:{
+				color: $color-turquoise-green;
+			}
+			& .award-winners{
+				padding: 55px 6% 55px 5%;
+				p{
 
-				font-family: $work-sans-stack;
-				font-weight: $thin;
-		      font-size: $font-size * 1.25;
-		      color: $color-dark;
-		      line-height: 1.7;
-		      letter-spacing: -0.2px;
-		      text-decoration: none;
-				span{
 					font-family: $work-sans-stack;
-					font-weight: $regular;
-			        font-size: $font-size * 1.25;
-			        color: $color-dark;
-			        line-height: 1.7;
-			        letter-spacing: -0.2px;
-			        text-decoration: none;
+					font-weight: $thin;
+			      font-size: $font-size * 1.25;
+			      color: $color-dark;
+			      line-height: 1.7;
+			      letter-spacing: -0.2px;
+			      text-decoration: none;
+					span{
+						font-family: $work-sans-stack;
+						font-weight: $regular;
+				        font-size: $font-size * 1.25;
+				        color: $color-dark;
+				        line-height: 1.7;
+				        letter-spacing: -0.2px;
+				        text-decoration: none;
+					}
+				}
+				& > .readmore{
+				    color: $color-white;
+				    letter-spacing: 0.3px;
+				    height: 100%;
+				    margin-top: 12px;
+				    & a:visited {color: $color-white;}
+				    & a.arrow-right{
+						position: relative;
+						width:20px;
+						height: 20px;
+						line-height: 1.15;
+						margin:{
+							left: 10px;
+							top:3px;
+						}
+						text-decoration: none;
+						cursor: pointer;
+						transition: all 200ms;
+						background:{
+							image: $readmore-arrow-right-image-src;
+							repeat: no-repeat;
+							position: left center;
+							size:contain;
+						}
+						&:hover{
+						transform: scale(1.2,1.2);
+						}
+				    }
 				}
 			}
-			& > .readmore{
-			    color: $color-white;
-			    letter-spacing: 0.3px;
-			    height: 100%;
-			    margin-top: 12px;
-			    & a:visited {color: $color-white;}
-			    & a.arrow-right{
-					position: relative;
-					width:20px;
-					height: 20px;
-					line-height: 1.15;
-					margin:{
-						left: 10px;
-						top:3px;
-					}
-					text-decoration: none;
-					cursor: pointer;
-					transition: all 200ms;
-					background:{
-						image: $readmore-arrow-right-image-src;
-						repeat: no-repeat;
-						position: left center;
-						size:contain;
-					}
-					&:hover{
-					transform: scale(1.2,1.2);
-					}
-			    }
-			}
 		}
+
 	}
 }
 #page-header{
@@ -321,6 +324,7 @@ section{
 	& h1{
 		margin-top: -45px;
 	}
+	margin-bottom: 10px;
 }
 #page-header.feature{
 	text-align: center;
@@ -345,21 +349,12 @@ section{
 		margin-top: -135px;
 		letter-spacing: 1.1px;
 	}
-	& p:nth-of-type(2){
-		position: relative;
-		font-family: $work-sans-stack;
-		font-weight: $light;
-		font-size: $font-size * 1.5;
-		margin:0 auto;
-		text-align: center;
-		margin-top:30px;
-	}
 }
 
 .division{
 
 	margin:{
-		top: $full-column;
+		top: 60px;
 		right: 8%;
 		left: 8%;
 	}
@@ -381,9 +376,6 @@ section{
 
 		& .project{
 			flex-basis: 33.3%;
-
-			height: 250px;
-			width: 300px;
 			margin:{
 				top: 90px;
 			}
@@ -423,25 +415,18 @@ section{
 					line-height: 1;
 					text-decoration: none;
 					margin-top: 27px;
+					&:after{
+						margin-left: 10px;
+						cursor: pointer;
+						font-size: 36px;
+						bottom:-5px;
+						position: relative;
+						color: $color-aqua-blue;
+						content: "\232A";
+						transition: all 200ms;
+			      }
 				}
-				& a.arrow-in{
-					position: relative;
-					padding: 1px 1px 1px 1px;
-					width:10px;
-					margin-left: 10px;
-					text-decoration: none;
-					cursor: pointer;
-					background:{
-						image: $sub-menu-arrow-image-src;
-						repeat: no-repeat;
-						position: center center;
-						size:contain;
-					}
-					transition: all 200ms;
-					&:hover{
-						transform: scale(1.2,1.2);
-					}
-		      }
+
 			}
 			& .project-name{
 				font-family: $contax-sans-regular-stack;
@@ -509,7 +494,7 @@ section{
 	}
 }
 #projects-directory{
-	margin-bottom:150px;
+	margin-bottom:40px;
 }
 #faculty-directory{
 	margin-bottom:150px;
@@ -561,13 +546,13 @@ section{
 		position: relative;
 		display: inline-block;
 		top: -25px;
-		padding: 1px 25px 1px 25px;
+		padding: 10px 25px 10px 25px;
 		background:{
 			color: $color-turquoise-green;
 		}
 		color: $color-white;
 		font-size: $font-size * 1.5;
-		line-height: 50px;
+		line-height: 30px;
 		font-family: $work-sans-stack;
 		font-weight: $medium;
 		text-align: center;
@@ -772,9 +757,9 @@ section{
 	overflow:hidden;
 	& .main-wrapper{
 		& > p.header-credit{
-	    	margin: -80px auto 80px auto;
-			color: $color-slate-grey;
-			font-size: 2*$font-size;
+			position: relative;
+	    	margin: 0px auto 30px auto;
+			font-size: $font-size * 1.5;
 			line-height: $leading;
 			font-family: $work-sans-stack;
 			font-weight: $light;
@@ -832,13 +817,18 @@ section{
 
 				width: 100%;
 				& > div:first-of-type{
-					max-width: 805px;
 					flex: 0 1 805px;
 					margin-right: 2vw;
 				}
 				& > div:nth-of-type(3){
 					margin-top: 60px;
-					max-width: 657px;
+					max-width: 805px;
+					flex: 0 1 805px;
+					display: flex;
+					justify-content: flex-end;
+					& .slider{
+						max-width: 657px;
+					}
 				}
 				& .text-block{
 					height: 615px;
@@ -1033,7 +1023,8 @@ section{
 				& > div:nth-of-type(3){
 					flex-shrink: 0;
 					& p{
-						max-width: 337px;
+						max-width: 320px;
+						padding-right: 17px
 					}
 				}
 			}
@@ -1076,7 +1067,7 @@ section{
 				}
 				& > div:nth-of-type(5){
 					margin-top: 90px;
-					margin-left: 6%;
+					margin-left: 6px;
 					& p{
 						max-width: 354px;
 						&:last-of-type{
@@ -1094,15 +1085,19 @@ section{
 				}
 				& > div:nth-of-type(6){
 					display: none;
-
 					& p{
 						max-width: 340px;
-						& span{
-						margin-right: 5px;
-						color: $color-turquoise-green;
-						line-height: 1.25;
-						font-family: $contax-sans-regular-stack;
-					}
+						&:last-of-type{
+							line-height: 1.25;
+							margin-top: 30px;
+							font-family: $contax-sans-regular-stack;
+							& > span{
+								margin-right: 5px;
+								color: $color-turquoise-green;
+								line-height: 1.25;
+								font-family: $contax-sans-regular-stack;
+							}
+						}
 					}
 				}
 			}
@@ -1148,6 +1143,15 @@ section{
 #featured-alumna{
 	overflow:hidden;
 	& .main-wrapper{
+		& > p.header-credit{
+			position: relative;
+	    	margin: 0px auto 30px auto;
+			font-size: $font-size * 1.5;
+			line-height: $leading;
+			font-family: $work-sans-stack;
+			font-weight: $light;
+			text-align: center;
+		}
 		& .grid-container{
 			width: 100%;
 			position: relative;
@@ -1174,6 +1178,7 @@ section{
 					border-top: 2px solid rgb(211,210,213);
 					padding-top: 22px;
 					column-count: 2;
+					-webkit-column-count: 2;
 					flex-shrink: 1;
 					margin-right: 4%;
 					& p{
@@ -1508,10 +1513,8 @@ section{
 	}
 }
 #academic-text .main-wrapper{
-
-
 	& > p.header-credit{
-    	margin: 0px auto 80px auto;
+    	margin: 0px auto 40px auto;
 		color: $color-slate-grey;
 		font-size: 2*$font-size;
 		line-height: $leading;
@@ -1581,6 +1584,7 @@ section{
 			& .text-block{
 				max-width: 90%;
 				column-count: 2;
+				-webkit-column-count: 2;
 				column-gap: 35px;
 				& p{
 					max-width: 414px;
@@ -1654,7 +1658,7 @@ section{
 			justify-content: flex-start;
 			margin-top: 60px;
 			& > div:nth-of-type(1){
-				flex: 0 4 246px;
+				flex: 0 4 160px;
 			}
 			& > div:nth-of-type(4){
 				flex: 0 4 134px;
@@ -1848,7 +1852,7 @@ section{
 		& .issue{
 			flex-basis: 33.3%;
 			height: 418px;
-			margin: 40px auto 80px auto;
+			margin: 40px auto 40px auto;
 			& .cover-image{
 				width: 210px;
 				height: 310px;
@@ -1869,7 +1873,7 @@ section{
 				font-size: 1.2*$font-size;
 				line-height: 1.9;
 				font-family: $work-sans-stack;
-				font-weight: $light;
+				font-weight: $regular;
 				cursor: default;
 			}
 			& .name{
@@ -1959,6 +1963,7 @@ section{
 					line-height: 1.6;
 					padding-top:30px;
 					& label{
+						letter-spacing: 1px;
 						text-transform: uppercase;
 						color: $color-purpley-grey;
 						font-size: 0.9*$font-size;

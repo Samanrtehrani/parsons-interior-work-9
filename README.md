@@ -1,1 +1,6 @@
-# parsons-interior-work-9
+# Parsons Interior Work
+
+ ```
+ npm install
+ gulp serve
+ ```

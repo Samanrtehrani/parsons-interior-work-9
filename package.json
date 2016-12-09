@@ -1,14 +1,14 @@
 {
-  "name": "assignment-2",
+  "name": "parsons-interior-work-9",
   "version": "1.0.0",
-  "description": "An automation template for HTML, CSS, Sass, and JavaScript used by the Web Advanced Using JavaScript course at Parsons School of Design.",
+  "description": "An automation template for HTML, CSS, Sass, and JavaScript built by Roy Vanegas.",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/code-warrior/web-advanced-using-javascript.git"
+    "url": "git+https://github.com/samantehrani/parsons-interior-work-9.git"
   },
   "keywords": [
     "gulp",
@@ -22,19 +22,24 @@
     "javascript",
     "parsons"
   ],
-  "author": "Roy Vanegas",
+  "author": "Saman Tehrani",
   "license": "ISC",
   "contributors": [
     {
       "name": "Roy Vanegas",
       "email": "roy@thecodeeducators.com",
       "url": "http://roy.vanegas.org"
+    },
+    {
+      "name": "Saman Tehrani",
+      "email": "samanrtehrani@gmail.com,",
+      "url": "https://samantehrani.com"
     }
   ],
   "bugs": {
-    "url": "https://github.com/code-warrior/web-advanced-using-javascript/issues"
+    "url": "https://github.com/samantehrani/parsons-interior-work-9/issues"
   },
-  "homepage": "https://github.com/code-warrior/web-advanced-using-javascript#readme",
+  "homepage": "https://github.com/samantehrani/parsons-interior-work-9#readme",
   "devDependencies": {
     "browser-sync": "^2.10.1",
     "del": "^2.2.0",
